@@ -81,17 +81,25 @@ export default function App() {
             onMouseEnter={() => setFlip(true)}
             onMouseLeave={() => setFlip(false)}
             >   
+            <div>
                 <CardFront flip={flip}>
                     <CardContent>
-                        <h1>{element.what}</h1>
+                        <div>
+                            <p>{element.what}</p>
+                        </div>
                     </CardContent>
                     <BGFade />
                 </CardFront>
+            </div>
+            <div>
                 <CardBack flip={flip}>
                     <CardContent>
-                        <h1>{element.how}yolu</h1>
+                        <div>
+                            <p>{element.how}</p>
+                        </div>
                     </CardContent>
                 </CardBack>
+            </div>
             </Card>
         </Container>
         </div>)}

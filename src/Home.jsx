@@ -46,15 +46,14 @@ function Home() {
         <Input />
       </div>
       <h2 class="already-stored">Already Stored</h2>
+      
       { memories.map(element =>
           <div className = "wrapper">
-            <div className="card">
-              <div>< SingleCard /></div>
+            <div>< SingleCard /></div>
+            <div className="card"> 
               <div>{element.what}</div>
               <div>{element.how}</div>
               <div className="date">date</div>
-          
-              
             </div>
           </div>)}
     </div>);
