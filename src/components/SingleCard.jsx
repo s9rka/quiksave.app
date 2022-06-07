@@ -89,7 +89,7 @@ export default function App() {
                 </CardFront>
                 <CardBack flip={flip}>
                     <CardContent>
-                        <h1>{element.how}</h1>
+                        <h1>{element.how}yolu</h1>
                     </CardContent>
                 </CardBack>
             </Card>
