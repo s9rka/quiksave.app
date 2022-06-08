@@ -33,24 +33,40 @@ function Input() {
 
     return (
         <div>
-            <div className="row">
-                <div className="column1">
-                    <div className="number">1</div>
-                    <div className="question"><label>Content</label> <br /></div>
-                     
-                    <textarea rows="5" cols="45" placeholder="title, sentence, conversation, thought etc. you want to keep" className="input-field" ref={whatRef} type="text" autoFocus/> <br />
+            <div className="body">
+            <div className="column">
+                <div className="row1">
+                    <div className="title-column">
+                        <div className="number">1</div>
+                        <div className="question"><label>Content</label> <br /></div>
+                    </div>
+                    <div className="input-container">
+                    <textarea className="input-field" rows="5" cols="45" placeholder="title, sentence, conversation, thought etc. you want to keep"  ref={whatRef} type="text" autoFocus/> <br />
                 </div>
-                <div className="column2">
-                    <div className="number">2</div>
-                    <div className="question"><label>Source</label> <br /></div> 
-                    <textarea rows="5" cols="45" placeholder="situation, citation, reference, link etc. aka source" className="input-field" id="how" ref={howRef} type="text" required /> <br />
+                 
                 </div>
-                <div className="column3">
-                    <div className="number">3</div>
-                    <div className="question"><label>Meaning</label> <br /></div>
-                    <textarea rows="5" cols="45" placeholder="how is it important to you; what it means to you" className="input-field" ref={whyRef} type="text" required /> <br /> 
+                <div className="row2">
+                    <div className="title-column">
+                        <div className="number">2</div>
+                        <div className="question"><label>Source</label> <br /></div> 
+                    </div>
+                    <div className="input-container">
+                    <textarea className="input-field" tabindex="0" rows="5" cols="45" placeholder="situation, citation, reference, link etc. aka source"  id="how" ref={howRef} type="text" required /> <br /> 
+                    </div>
                 </div>
+                
+                <div className="row3">
+                    <div className="title-column">
+                        <div className="number">3</div>
+                        <div className="question"><label>Meaning</label> <br /></div>
+                    </div>
+                    <div className="input-container">
+                    <textarea className="input-field" rows="5" cols="45" placeholder="how is it important to you; what it means to you" ref={whyRef} type="text" required /> <br /> 
+                    </div>
+                </div>
+                
                 <button className="submit-button" onClick={() => onAddMemory()}>Store Data</button>
+            </div>
             </div>
             <ToastContainer />
         </div>)

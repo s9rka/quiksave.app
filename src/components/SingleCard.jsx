@@ -74,8 +74,9 @@ export default function App() {
   return (
     <div className="App">
         
-        {memories.map(element =>
-        <div>
+        
+        
+        
         <Container>
             <Card
             onMouseEnter={() => setFlip(true)}
@@ -85,7 +86,7 @@ export default function App() {
                 <CardFront flip={flip}>
                     <CardContent>
                         <div>
-                            <p>{element.what}</p>
+                            <p></p>
                         </div>
                     </CardContent>
                     <BGFade />
@@ -95,14 +96,14 @@ export default function App() {
                 <CardBack flip={flip}>
                     <CardContent>
                         <div>
-                            <p>{element.how}</p>
+                            <p></p>
                         </div>
                     </CardContent>
                 </CardBack>
             </div>
             </Card>
         </Container>
-        </div>)}
+        
     </div>
   );
 }

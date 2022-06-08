@@ -1,26 +1,52 @@
-.column1 {
-    float: left;
-    width: 33.33%;
-}
-
-.column2 {
-    float: left;
-    width: 33.33%;
-    margin-top: 40px;
-}
-
-.column3 {
-    float: left;
-    width: 33.33%;
-    margin-top: 80px;
-}
-
-.row {
-    margin-bottom: 4rem;
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
     
-
-
 }
+.body{
+    display: flex;
+    justify-content: center;
+}
+.title-column {
+    flex: 1 100%;
+    
+    justify-content: center;
+    
+}
+.row1 {
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+    gap: 2rem;
+    
+    
+    
+}
+
+.row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    
+    
+}
+
+.row3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    
+    
+}
+
+
+
+
   /* Clear floats after the columns */
 .row:after {
     content: "";
@@ -52,7 +78,8 @@
 
 
 .submit-button {
-    margin-top: 32px;
+    margin-top: 24px;
+    margin-bottom: 48px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 12px;
@@ -116,14 +143,27 @@
 }
 
 h1.hero-header {
-    font-weight: 300;
-    font-size: 48px;
-    margin-bottom: 2rem;
+    font-weight: 500;
+    font-size: 3rem;
+    margin-bottom: 0rem;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    gap: 1rem;
 }
 
-h2.already-stored {
-    padding-top: 42px;
-    font-weight: 400;
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin-bottom: 4rem;
+    font-weight: 300;
 }
 
 .card-header {
@@ -173,4 +213,30 @@ h2.hero-subheader {
     font-size: 16px;
     color: hsla(270, 2%, 16%, 0.656);
 
+}
+
+@media all and (max-width: 500px) {
+    
+.column {
+    margin-bottom: 4rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.row1 {
+    display: flex;
+    flex-direction: column;
+}
+.row2 {
+    display: flex;
+    flex-direction: column;
+}
+.row3 {
+    display: flex;
+    flex-direction: column;
+}
+        
+.submit-button {
+    justify-self: center;
+}
 }
