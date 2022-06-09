@@ -13,8 +13,9 @@
     flex: 1 100%;
     
     justify-content: center;
-    
+ 
 }
+
 .row1 {
     display: flex;
     flex-direction: row;
@@ -57,39 +58,30 @@
 .number {
     font-family: "poppins", sans-serif;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 2.6rem;
 }
 
 .question {
-    margin-bottom: 24px;
+    margin-bottom: 1rem;
     font-family: "poppins", sans-serif;
     font-size: 1.4rem;
 }
 
-.explication {
-    margin-right: 8px;
-    margin-bottom: -16px;
-    font-family: "poppins", sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 0.9rem;
-}
-
-
-
 .submit-button {
-    margin-top: 24px;
-    margin-bottom: 48px;
-    padding-left: 20px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-left: px;
     padding-right: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
-    font-weight: 400;
     font-size: 1.2rem;
     background-color: #a1a5f2;
     border-width: 0px;
     border-radius: 4px;
-    background: #282729;
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     color: #FFFBF8;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.144);
     transition: 0.3s;
@@ -100,12 +92,13 @@
 
 .submit-button:hover {
     box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    -webkit-transform: translateY(-0.03em);
+    -webkit-transform: translateY(-0.01em);
     transform: translateY(-0.03em);
-    background: #606c88;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: #5C258D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    
     color: #FFFBF8;
     font-family: 'Roboto Mono', monospace;
     font-weight: 500;
@@ -151,8 +144,8 @@ h1.hero-header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     gap: 1rem;
 }
 
@@ -174,9 +167,8 @@ h2 {
     display: block;
 }
 
-h2.hero-subheader {
-    font-style: italic;
-    font-weight: 300;
+.subtitle {
+    font-weight: 400;
 }
 
 .input-field {
@@ -240,3 +232,4 @@ h2.hero-subheader {
     justify-self: center;
 }
 }
+

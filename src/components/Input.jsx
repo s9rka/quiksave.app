@@ -8,7 +8,7 @@ function Input() {
   const howRef = useRef();
   const whyRef = useRef();
   const url = "https://store-your-mind-default-rtdb.europe-west1.firebasedatabase.app";
-  const [isLoading, setIsLoading] = useState(false);
+  
 
   function onAddMemory() {
     const newMemory = {
@@ -41,7 +41,7 @@ function Input() {
                         <div className="question"><label>Content</label> <br /></div>
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" rows="5" cols="45" placeholder="title, sentence, conversation, thought etc. you want to keep"  ref={whatRef} type="text" autoFocus/> <br />
+                    <textarea className="input-field" rows="4" cols="45" placeholder="title, sentence, conversation, thought etc. you want to keep"  ref={whatRef} type="text" autoFocus/> <br />
                 </div>
                  
                 </div>
@@ -51,7 +51,7 @@ function Input() {
                         <div className="question"><label>Source</label> <br /></div> 
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" tabindex="0" rows="5" cols="45" placeholder="situation, citation, reference, link etc. aka source"  id="how" ref={howRef} type="text" required /> <br /> 
+                    <textarea className="input-field" rows="4" cols="45" placeholder="situation, citation, reference, link etc. aka source"  id="how" ref={howRef} type="text" required /> <br /> 
                     </div>
                 </div>
                 
@@ -61,7 +61,7 @@ function Input() {
                         <div className="question"><label>Meaning</label> <br /></div>
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" rows="5" cols="45" placeholder="how is it important to you; what it means to you" ref={whyRef} type="text" required /> <br /> 
+                    <textarea className="input-field" rows="4" cols="45" placeholder="how is it important to you; what it means to you" ref={whyRef} type="text" required /> <br /> 
                     </div>
                 </div>
                 

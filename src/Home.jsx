@@ -43,7 +43,7 @@ function Home() {
     <div className="App">
       <div>
         <div className='header'>
-        <svg width="161" height="140" viewBox="0 0 205 178" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="140" height="140" viewBox="0 0 205 178" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M153.435 88.7793L203.825 118.373L153.435 147.967L102.479 177.561V118.373L153.435 88.7793Z" fill="#874B4B"/>
           <path d="M51.5223 88.7793L0 118.373L51.5223 147.967L102.478 177.561V118.373L51.5223 88.7793Z" fill="#874B4B"/>
           <path d="M0.565918 59.1855V118.373L51.522 147.967V88.7795L0.565918 59.1855Z" fill="black"/>
@@ -57,13 +57,13 @@ function Home() {
         </svg>
         <div className='header-text'>
         <h1 class="hero-header">Store Your Mind </h1>
-        <em>A tool to better monitor your thoughts</em>
+        <em className="subtitle">A tool to better monitor your thoughts</em>
         </div>
         </div>
 
         <Input />
       </div>
-      <h2 class="already-stored">Already Stored</h2>
+      
       
       { memories.map(element =>
           <div className = "wrapper">
@@ -72,6 +72,7 @@ function Home() {
               <div>{element.what}</div>
               <div>{element.how}</div>
               <div className="date">date</div>
+              <button onClick={() => deleteMemory(element)}>delete</button>
             </div>
           </div>)}
     </div>);
