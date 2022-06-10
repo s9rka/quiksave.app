@@ -1,11 +1,14 @@
 import { useRef, useState, useEffect } from 'react';
 import "./css/Home.css"
 import Input from './components/Input.jsx';
-import SingleCard from './components/SingleCard.jsx';
+import FlipCard from './components/FlipCard';
+import './components/FlipCard.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function Home() {
   const [memories, setMemories] = useState([]);
+  const [flipCards, setFlipCards] = useState([]);
   const dbUrl = "https://store-your-mind-default-rtdb.europe-west1.firebasedatabase.app/memories.json"
 
   useEffect(() => {  
@@ -16,22 +19,11 @@ function Home() {
           memoriesFromDb.push(responseBody[key]);
         }
       setMemories(memoriesFromDb);
+      const cardOutput = memoriesFromDb.map((element, index) => {return  {id: index +1, variant: "click", front: element.what, back1: element.how, back2: element.why}})
+      setFlipCards(cardOutput);
     })
   },[]);
-  function deleteMemory(memory) {
-    const index = memories.findIndex(element => element.what === memory.what);
-    memories.splice(index,1);
-    setMemories(memories.slice());
 
-    fetch(dbUrl, {
-        method: "PUT",
-        body: JSON.stringify(memories),
-        "headers": {
-            "Content-Type": "application/json"
-        }
-    })
-  }
- 
   return (
     <div className="App">
       <div>
@@ -55,18 +47,33 @@ function Home() {
         </div>
         <Input />
       </div>
-
-      { memories.map(element =>
-          <div className = "wrapper">
-            <div>< SingleCard /></div>
-            <div className="card"> 
-              <div>{element.what}</div>
-              <div>{element.how}</div>
-              <div className="date">date</div>
-              <button onClick={() => deleteMemory(element)}>delete</button>
-            </div>
-          </div>)}
+      
+      
+          <div className="container">
+            {flipCards.map((card) => (
+              <FlipCard key={card.id} card={card} />      
+            ))}
+          </div>
     </div>);
 }
 
 export default Home;
+
+
+
+
+/* <button onClick={() => deleteMemory(element)}>delete</button> */
+
+/* function deleteMemory(flipCard) {
+    const index = flipCards.findIndex(element => element.id === flipCard.id);
+    flipCards.splice(index,1);
+    setMemories(flipCards.slice());
+
+    fetch(dbUrl, {
+        method: "PUT",
+        body: JSON.stringify(flipCards),
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    })
+  } */

@@ -19,8 +19,7 @@
 .row1 {
     display: flex;
     flex-direction: row;
-    
-    justify-content: center;
+
     gap: 2rem;
     
     
@@ -58,18 +57,18 @@
 .number {
     font-family: "poppins", sans-serif;
     font-weight: 600;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
 }
 
 .question {
-    margin-bottom: 1rem;
+    
     font-family: "poppins", sans-serif;
     font-size: 1.4rem;
 }
 
 .submit-button {
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 12px;
@@ -108,23 +107,7 @@
 } 
 
 
-.card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 5px 7px rgba(0, 0, 0, 0.792);
-    transition: 0.3s;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: 120px;
-    width: 240px;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    position: relative;
-    display: flex;
-        align-items: center;
-        justify-content: center;
-    
-    
-  }
+
 
 .wrapper {
     margin-bottom: 42px;
@@ -139,6 +122,7 @@ h1.hero-header {
     font-weight: 500;
     font-size: 3rem;
     margin-bottom: 0rem;
+    margin-top: 1rem;
 }
 .header {
     display: flex;
@@ -146,29 +130,18 @@ h1.hero-header {
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 3rem;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .header-text {
     display: flex;
     flex-direction: column;
-}
-
-h2 {
-    margin-bottom: 4rem;
-    font-weight: 300;
-}
-
-.card-header {
-    font-style: italic;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0 auto;
-    display: block;
+    justify-content: center;
 }
 
 .subtitle {
-    font-weight: 400;
+    font-weight: 500;
+    color: #232526c0;
 }
 
 .input-field {

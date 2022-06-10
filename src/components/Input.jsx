@@ -41,7 +41,7 @@ function Input() {
                         <div className="question"><label>Content</label> <br /></div>
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" rows="4" cols="45" placeholder="Title, sentence, conversation, thought etc. you want to keep"  ref={whatRef} type="text" autoFocus/> <br />
+                    <textarea className="input-field" rows="3" cols="45" placeholder="Title, sentence, conversation, thought etc. you want to keep"  ref={whatRef} type="text" autoFocus/> <br />
                 </div>
                  
                 </div>
@@ -51,7 +51,7 @@ function Input() {
                         <div className="question"><label>Source</label> <br /></div> 
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" rows="4" cols="45" placeholder="Situation, citation, reference, link etc. aka source"  id="how" ref={howRef} type="text" required /> <br /> 
+                    <textarea className="input-field" rows="3" cols="45" placeholder="Situation, citation, reference, link etc. aka source"  id="how" ref={howRef} type="text" required /> <br /> 
                     </div>
                 </div>
                 
@@ -61,7 +61,7 @@ function Input() {
                         <div className="question"><label>Meaning</label> <br /></div>
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" rows="4" cols="45" placeholder="How is it important to you; what it means to you" ref={whyRef} type="text" required /> <br /> 
+                    <textarea className="input-field" rows="3" cols="45" placeholder="How is it important to you; what it means to you" ref={whyRef} type="text" required /> <br /> 
                     </div>
                 </div>
                 

@@ -1,21 +1,73 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import cn from "classnames";
 
 function FlipCard({ card }) {
-  return (
-    <div className="flip-card-outer">
-      <div className="flip-card-inner">
+  const [showBack, setShowBack] = useState(false);
+  const [memories, setMemories] = useState([]);
+  const [flipCards, setFlipCards] = useState([]);
+  const dbUrl = "https://store-your-mind-default-rtdb.europe-west1.firebasedatabase.app/memories.json"
+
+  useEffect(() => {  
+    fetch(dbUrl).then(response => response.json())
+    .then(responseBody => {
+      const memoriesFromDb = [];
+      for (const key in responseBody) {
+          memoriesFromDb.push(responseBody[key]);
+        }
+      setMemories(memoriesFromDb);
+      const cardOutput = memoriesFromDb.map((element, index) => {return  {id: index +1, variant: "click", front: element.what, back1: element.how, back2: element.why}})
+      setFlipCards(cardOutput);
+    })
+  },[]);
+  function handleClick() {
+    if (card.variant === "click") {
+      setShowBack(!showBack);
+    }
+  }
+  function deleteMemory(flipCard) {
+    const index = flipCards.findIndex(element => element.id === flipCard.id);
+    flipCards.splice(index,1);
+    setMemories(flipCards.slice());
+
+    fetch(dbUrl, {
+        method: "PUT",
+        body: JSON.stringify(memories),
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    })
+  }
+
+  return ( 
+  <div>
+    {flipCards.map(element =>
+    <div>
+    <button onClick={() => deleteMemory(element)}className='test-button'>button</button>
+    <div className="flip-card-outer"
+      onClick={handleClick}>
+      <div
+        className={cn("flip-card-inner", {
+          showBack,
+          "hover-trigger": card.variant === "hover"
+        })}
+      >
+        
         <div className="card front">
-          <div className="card-body d-flex justify-content-center align-items-center">
-            <p className="card-text fs-1 fw-bold">{card.front}</p>
+        
+          <div className="card-body">
+            <p className="card-text-content">{card.front}</p>
           </div>
         </div>
         <div className="card back">
-          <div className="card-body d-flex justify-content-center align-items-center">
-            <p className="card-text fs-1 fw-bold">{card.back}</p>
+          <div className="card-body">
+            <div className="card-text-source">{card.back1}</div>
+            <p className="card-text-meaning">{card.back2}</p> 
           </div>
         </div>
       </div>
     </div>
+    </div>)}
+  </div>
   );
 }
 
