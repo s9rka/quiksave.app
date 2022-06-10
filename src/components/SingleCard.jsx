@@ -1,6 +1,7 @@
 
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import './SingleCard.css';
 
 const Container = styled("div")(() => ({
   display: "flex",
@@ -76,7 +77,8 @@ export default function App() {
         
         
         
-        
+        { memories.map(element =>
+        <div className="card-wrapper"> 
         <Container>
             <Card
             onMouseEnter={() => setFlip(true)}
@@ -86,7 +88,7 @@ export default function App() {
                 <CardFront flip={flip}>
                     <CardContent>
                         <div>
-                            <p></p>
+                            {element.what}
                         </div>
                     </CardContent>
                     <BGFade />
@@ -96,13 +98,14 @@ export default function App() {
                 <CardBack flip={flip}>
                     <CardContent>
                         <div>
-                            <p></p>
+                            {element.how}
                         </div>
                     </CardContent>
                 </CardBack>
             </div>
             </Card>
         </Container>
+        </div>)}
         
     </div>
   );
