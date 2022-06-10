@@ -24,25 +24,11 @@ function FlipCard({ card }) {
       setShowBack(!showBack);
     }
   }
-  function deleteMemory(flipCard) {
-    const index = flipCards.findIndex(element => element.id === flipCard.id);
-    flipCards.splice(index,1);
-    setMemories(flipCards.slice());
-
-    fetch(dbUrl, {
-        method: "PUT",
-        body: JSON.stringify(memories),
-        "headers": {
-            "Content-Type": "application/json"
-        }
-    })
-  }
 
   return ( 
   <div>
-    {flipCards.map(element =>
-    <div>
-    <button onClick={() => deleteMemory(element)}className='test-button'>button</button>
+    
+    
     <div className="flip-card-outer"
       onClick={handleClick}>
       <div
@@ -66,7 +52,6 @@ function FlipCard({ card }) {
         </div>
       </div>
     </div>
-    </div>)}
   </div>
   );
 }

@@ -24,6 +24,20 @@ function Home() {
     })
   },[]);
 
+  function deleteMemory(flipCard) {
+    const index = flipCards.findIndex(element => element.id === flipCard.id);
+    flipCards.splice(index,1);
+    setMemories(flipCards.slice());
+
+    fetch(dbUrl, {
+        method: "PUT",
+        body: JSON.stringify(memories),
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    })
+  }
+
   return (
     <div className="App">
       <div>
@@ -50,8 +64,10 @@ function Home() {
       
       
           <div className="container">
-            {flipCards.map((card) => (
-              <FlipCard key={card.id} card={card} />      
+            {flipCards.slice(1).map((card) => (
+              <div><button onClick={() => deleteMemory(card)}className='test-button'>button</button>
+              <FlipCard key={card.id} card={card} />    
+              </div>  
             ))}
           </div>
     </div>);
