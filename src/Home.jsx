@@ -1,9 +1,10 @@
 import { useRef, useState, useEffect } from 'react';
-import "./css/Home.css"
+import "./css/Home.scss"
 import Input from './components/Input.jsx';
 import FlipCard from './components/FlipCard';
-import './components/FlipCard.scss';
+import './css/FlipCard.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Test from './components/Test';
 
 
 function Home() {
@@ -19,7 +20,7 @@ function Home() {
           memoriesFromDb.push(responseBody[key]);
         }
       setMemories(memoriesFromDb);
-      const cardOutput = memoriesFromDb.map((element, index) => {return  {id: index +1, variant: "click", front: element.what, back1: element.how, back2: element.why}})
+      const cardOutput = memoriesFromDb.map((element, index) => {return  {id: index +1, variant: "click", front: element.what, front1: element.category, back1: element.how, back2: element.why}})
       setFlipCards(cardOutput);
     })
   },[]);
@@ -40,9 +41,16 @@ function Home() {
 
   return (
     <div className="App">
-      <div>
+      
         <div className='header'>
-          <svg width="140" height="140" viewBox="0 0 205 178" fill="none" xmlns="http://www.w3.org/2000/svg">
+          
+          <div class='hero-header-box'>
+            <h1 class="hero-header">
+              <span class="hero-header-main">Store Your Mind</span>
+              <span class="hero-header-sub">A tool to observe your thoughts</span>
+            </h1>
+            <div class="hero-logo">
+              <svg width="140" height="140" viewBox="0 0 205 178" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M153.435 88.7793L203.825 118.373L153.435 147.967L102.479 177.561V118.373L153.435 88.7793Z" fill="#874B4B"/>
           <path d="M51.5223 88.7793L0 118.373L51.5223 147.967L102.478 177.561V118.373L51.5223 88.7793Z" fill="#874B4B"/>
           <path d="M0.565918 59.1855V118.373L51.522 147.967V88.7795L0.565918 59.1855Z" fill="black"/>
@@ -53,20 +61,20 @@ function Home() {
           <path d="M153.661 118.375L102.44 147.969L51.2202 118.375L102.44 88.7812L153.661 118.375Z" fill="white"/>
           <path d="M153.661 88.7814L102.44 118.375L51.2202 88.7814L102.44 59.1875L153.661 88.7814Z" fill="white"/>
           <path d="M204.881 59.0744L153.661 88.6683L102.44 59.0744L153.661 29.4805L204.881 59.0744Z" fill="black"/>
-          </svg>
-          <div className='header-text'>
-            <h1 class="hero-header">Store Your Mind </h1>
-            <em className="subtitle">A tool to better monitor your thoughts</em>
+              </svg>
+          </div>
+            
           </div>
         </div>
         <Input />
-      </div>
       
       
+      < Test />
           <div className="container">
-            {flipCards.slice(1).map((card) => (
-              <div><button onClick={() => deleteMemory(card)}className='test-button'>button</button>
-              <FlipCard key={card.id} card={card} />    
+            {flipCards.map((card) => (
+              <div><button onClick={() => deleteMemory(card)}className='test-button'>button</button> 
+              <FlipCard key={card.id} card={card} />
+
               </div>  
             ))}
           </div>
@@ -74,22 +82,3 @@ function Home() {
 }
 
 export default Home;
-
-
-
-
-/* <button onClick={() => deleteMemory(element)}>delete</button> */
-
-/* function deleteMemory(flipCard) {
-    const index = flipCards.findIndex(element => element.id === flipCard.id);
-    flipCards.splice(index,1);
-    setMemories(flipCards.slice());
-
-    fetch(dbUrl, {
-        method: "PUT",
-        body: JSON.stringify(flipCards),
-        "headers": {
-            "Content-Type": "application/json"
-        }
-    })
-  } */

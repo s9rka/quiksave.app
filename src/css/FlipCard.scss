@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
 body {
-  font-family: 'Ubuntu', sans-serif;
+  
   
 }
 
@@ -20,7 +20,9 @@ body {
 .flip-card-outer {
   width: 320px;
   height: 240px;
-  margin: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   z-index: 90;
   
   

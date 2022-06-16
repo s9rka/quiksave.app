@@ -1,0 +1,137 @@
+
+.select-category {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+.category-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+
+}
+
+.cat-button {
+    float: left;
+    margin: 0 5px 0 0;
+    padding: 0px;
+    width: auto;
+    position: relative;
+    border-width: 2px;
+    border-radius: 6px;
+    border-color: rgb(193, 193, 193);
+    background-color: #E7E3E3;
+  }
+
+  .cat-button:active {
+  }
+  .cat-button label,
+  .cat-button input {
+    display: flex;
+    /* enne oli position: absolute; */
+    display: inline-block;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .cat-button input[type="radio"] { /* kaotab raadiovälja */
+    opacity: 0.011;
+    z-index: 100;
+    
+  }
+  .cat-button input[type="radio"]:checked {
+    background: #095d2a;
+  }
+  
+  .cat-button input[type="radio"]:checked + label {
+    color: #3622e5;
+    border-width: 4px;
+    border-radius: 4px;
+    font-weight: 500;
+    background-color: #8CB49C;
+  }
+  
+  .cat-button label {
+    cursor: pointer;
+    z-index: 90;
+    font-family: "Roboto mono";
+  }
+
+  .cat-del-but {
+    
+  }
+
+  .delete-cat-btn {
+    
+    background-color: red;
+    font-family: "Roboto mono", monospace;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 4px 2px 4px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .add-new-cat {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .add-new-cat label {
+    font-family: "Poppins";
+    font-weight: 500;
+    color: #838383;
+    margin-bottom: 0.25rem;
+  }
+
+  .add-new-cat input {
+    border-width: 2px;
+    border-color:#918693;
+    border-radius: 4px;
+    width: 16rem;
+    height: 2rem;
+    padding-left: 0.25rem;
+  }
+
+  .add-new-cat input:focus {
+    border-width: 2px;
+    outline:#8CB49C;
+  }
+
+  .add-category-btn {
+    display: flex;
+    flex-direction: row;
+    position:relative;
+    align-items: center;
+  }
+
+  .btn-add {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0px;
+  padding: 0 15px;
+  border:none;
+  font-size: 1rem;
+  outline:none;
+  text-align:center;
+  font-family: "Poppins";
+    margin-right: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-weight: 600;
+    background-color: #8cb49ca0;
+    border-radius: 2px;
+  }
+
+h2.choose-category {
+  font-size: 1.5rem;
+  font-family: "Poppins";
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
