@@ -18,6 +18,7 @@ body {
     background-size: cover;
     background-position: top;
     padding: 2rem;
+    
 }
 
 .hero-header-box {
@@ -25,6 +26,7 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .hero-header {
@@ -63,8 +65,8 @@ body {
 
 .hero-logo:hover {
     animation-name: logoHover;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
     
 }
 
@@ -102,14 +104,45 @@ body {
 
 @keyframes logoHover {
     0% {
-        opacity: 60%;
+        opacity: 80%;
+        transform: translateY(-1px);
     }
-
+    50% {
+        transform: translateY(1px);
+    }
     100% {
         opacity: 120%;
     }
 }
 
+.button:link,
+.button:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    border-radius: 12px;
+    transition: all .1s;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    color: #232526;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    
+}
+
+.button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+    font-family: "Roboto mono", monospace;
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    font-weight: 500;
+}
 
 
 

@@ -62,9 +62,14 @@ function Home() {
           <path d="M153.661 88.7814L102.44 118.375L51.2202 88.7814L102.44 59.1875L153.661 88.7814Z" fill="white"/>
           <path d="M204.881 59.0744L153.661 88.6683L102.44 59.0744L153.661 29.4805L204.881 59.0744Z" fill="black"/>
               </svg>
-          </div>
-            
-          </div>
+            </div>
+            <div class="hero-button">
+              <a href="#" class="button button-black">Start</a>
+            </div>
+            </div>
+            <div class="hero-clouds">
+              
+            </div>
         </div>
         <Input />
       
