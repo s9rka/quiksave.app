@@ -1,6 +1,11 @@
+
+
+
+
+
 .App {
   text-align: center;
-  
+  font-family: "Poppins";
   margin: auto;
 }
 
@@ -39,3 +44,6 @@
     transform: rotate(360deg);
   }
 }
+
+
+

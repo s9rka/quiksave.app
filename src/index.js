@@ -4,7 +4,7 @@ import './index.css';
 import 'react-toastify/dist/ReactToastify.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react'
+
 
 
 
@@ -12,12 +12,9 @@ import { ChakraProvider } from '@chakra-ui/react'
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-  <React.StrictMode>
-    <ChakraProvider>
-      <BrowserRouter>
-          <App />
-      </BrowserRouter>
-    </ChakraProvider>
-
+  <React.StrictMode>    
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
   </React.StrictMode>,
 document.getElementById("root"));

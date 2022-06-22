@@ -3,8 +3,7 @@ import "./css/Home.scss"
 import Input from './components/Input.jsx';
 import FlipCard from './components/FlipCard';
 import './css/FlipCard.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Test from './components/Test';
+import { HashLink as Link } from 'react-router-hash-link';
 
 
 function Home() {
@@ -41,9 +40,7 @@ function Home() {
 
   return (
     <div className="App">
-      
         <div className='header'>
-          
           <div class='hero-header-box'>
             <h1 class="hero-header">
               <span class="hero-header-main">Store Your Mind</span>
@@ -64,26 +61,27 @@ function Home() {
               </svg>
             </div>
             <div class="hero-button">
-              <a href="#" class="button button-black">Start</a>
+              <Link to="/#start" class="button button-black">Start</Link>
             </div>
-            </div>
-            <div class="hero-clouds">
-              
-            </div>
+          </div>
+        </div>
+        <div id="start">
         </div>
         <Input />
       
       
-      < Test />
-          <div className="container">
+          
+    </div>);
+}
+
+export default Home;
+
+
+/*<div className="container">
             {flipCards.map((card) => (
               <div><button onClick={() => deleteMemory(card)}className='test-button'>button</button> 
               <FlipCard key={card.id} card={card} />
 
               </div>  
             ))}
-          </div>
-    </div>);
-}
-
-export default Home;
+          </div> */

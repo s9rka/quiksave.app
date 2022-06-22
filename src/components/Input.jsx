@@ -1,7 +1,11 @@
 import { useRef, useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../css/Categories.css';
+import '../css/Categories.scss';
+import '../css/Input.scss';
+import '../css/Home.scss';
+import { HashLink as Link } from 'react-router-hash-link';
+
 
 
 
@@ -10,10 +14,11 @@ function Input() {
   const howRef = useRef();
   const whyRef = useRef();
   const categoryRef = useRef();
-  const catSubmitRef = useRef();
+  const submitCategoryRef = useRef();
   const categoryIdRef = useRef();
   const url = "https://store-your-mind-default-rtdb.europe-west1.firebasedatabase.app";
   const [categories, setCategories] = useState([]);
+  const [checked, setChecked] = useState([]);
     const dbUrl = "https://store-your-mind-default-rtdb.europe-west1.firebasedatabase.app/categories.json";
   
   function onAddMemory() {
@@ -21,8 +26,7 @@ function Input() {
         "what": whatRef.current.value,
         "how": howRef.current.value,
         "why": whyRef.current.value,
-        
-        
+        "category": checked,    
         /* vaja teha ka kuupäev mil postitati */
 
     }
@@ -40,8 +44,18 @@ function Input() {
     window.location.reload();
     }
 
-    
-    useEffect(() => {
+    const handleCheck = (event) => {
+        var updatedList = [...checked];
+        if (event.target.checked) {
+          updatedList = [...checked, JSON.parse(event.target.value)];
+        } else {
+          updatedList.splice(checked.indexOf(JSON.parse(event.target.value)), 1);
+        }
+        setChecked(updatedList);
+        console.log(updatedList);
+      };
+
+      useEffect(() => {
         fetch(dbUrl).then(response => response.json())
         .then(responseBody => {
             const categoriesFromDb = [];
@@ -55,7 +69,6 @@ function Input() {
     function addCategory() {
         const newCategory ={
             "name": categoryRef.current.value,
-            "id": Number(categoryIdRef.current.value),
         }
         fetch(dbUrl, {
             method: "POST",
@@ -68,7 +81,7 @@ function Input() {
         setCategories(categories.slice());
         categoryRef.current.value = "";
     }
-        
+
     function deleteCategory(category) {
         const index = categories.findIndex(element => element.name === category.name);
         categories.splice(index,1);
@@ -82,51 +95,81 @@ function Input() {
             }
         })
     }
-
-    function monitorCat() {
-        console.log(catSubmitRef.current.value);
-    }
     
-    
-
     return (
         <div>
-            <div className="body">
+            
             <div className="column">
                 <div className="row1">
                     <div className="title-column">
-                        <div className="number">1</div>
-                        <div className="question"><label>Content</label> <br /></div>
+                        <div className="number">I</div>
+                        <div className="input-heading"><label>Content</label> <br /></div>
                     </div>
                     <div className="input-container">
                     <textarea className="input-field" rows="3" cols="45" placeholder="Title, sentence, conversation, thought etc. you want to keep"  ref={whatRef} type="text"/> <br />
+                    <div class="next-button">
+                        <Link to="/#source" class="button button-next">Next</Link>
+                        <div>▼</div>
+                    </div>
                 </div>
                  
                 </div>
+                <div id="source"/>
                 <div className="row2">
                     <div className="title-column">
-                        <div className="number">2</div>
-                        <div className="question"><label>Source</label> <br /></div> 
+                        <div>▲</div>
+                        <div><Link to="/#start" className='button button-back'>Previous</Link></div>
+                        <div className="number">II</div>
+                        <div className="input-heading"><label>Source</label> <br /></div> 
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" rows="3" cols="45" placeholder="Situation, citation, reference, link etc. aka source"  id="how" ref={howRef} type="text" required /> <br /> 
+                    <textarea className="input-field" rows="3" cols="45" placeholder="Situation, citation, reference, link etc. aka source"  id="how" ref={howRef} type="text" /> <br />
+                    <div class="next-button">
+                        <Link to="/#meaning" class="button button-next">Next</Link>
+                        <div>▼</div>
+                    </div> 
                     </div>
                 </div>
                 
+                <div id="meaning"/>
                 <div className="row3">
                     <div className="title-column">
-                        <div className="number">3</div>
-                        <div className="question"><label>Meaning</label> <br /></div>
+                        <div>▲</div>
+                        <div><Link to="/#source" className='button button-back'>Previous</Link></div>
+                        <div className="number">III</div>
+                        <div className="input-heading"><label>Meaning</label> <br /></div>
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" rows="3" cols="45" placeholder="How is it important to you; what it means to you" ref={whyRef} type="text" required /> <br /> 
+                    <textarea className="input-field" rows="3" cols="45" placeholder="How is it important to you; what it means to you" ref={whyRef} type="text" /> <br /> 
+                    <div class="next-button">
+                        <Link to="/#start" class="button button-next">Next</Link>
+                        <div>▼</div>
+                    </div>
                     </div>
                 </div>
+                
+                {categories.map(element => 
+                <div className='category-container'>           
+                        <div className="cat-button">
+                        <input ref={submitCategoryRef} value={JSON.stringify(element.name)} id={element.name} name="category" type="checkbox" onChange={handleCheck} />
+                        <label class="btn btn-default" for={element.name}>
+                            {element.name}
+                        </label>
+                        <button className="delete-cat-btn" onClick={() => deleteCategory(element)}>delete</button>
+                        </div>   
+                </div>)}
+
+                <div className='add-new-cat'>
+                    <label>Add category</label>
+                    <input ref={categoryRef} type="text" />
+                    <button onClick={() => addCategory()}>ADD</button>
+                </div>
+                    
                       
                 
                 <button className="submit-button" onClick={() => onAddMemory()}>Store Data</button>
             </div>
-            </div>
+            
             <ToastContainer />
         </div>)
 }
@@ -134,39 +177,4 @@ function Input() {
 export default Input;
 
 
-/* 
-<div className="select-category"> 
-                  <button onClick={monitorCat}>vajuta</button>
-                <h2 class="choose-category">Choose category</h2>
-                    <div className='category-buttons'> 
-                    
-                    {categories.map(element => 
-                    <div className='category-container'> 
-                                    
-                        <div className="cat-button">
-                        <input type="radio" ref={catSubmitRef} id={element.id} name="categories" value={element.name} />
-                        <label class="btn btn-default" for={element.id}>
-                            {element.name}
-                        </label>
-                            
-                        </div>
-                        <div className="cat-del-btn">
-                            <button className="delete-cat-btn" onClick={() => deleteCategory(element)}>delete</button>
-                        </div>
-                        
-                    </div>)}
-                        
-                    </div>
-                    <div className='add-new-cat'>
-                        <label>Add category</label>
-                        <div className="add-category-btn">
-                            <input ref={categoryRef} type="text" />
-                            <input ref={categoryIdRef} type="text" />
-                            <button class="btn-add" onClick={() => addCategory()}>+</button>
-                        </div>
-                        <div>
-                        
-                        </div>  
-                    </div>
-                </div>
-*/
+

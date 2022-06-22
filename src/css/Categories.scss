@@ -1,4 +1,6 @@
-
+html {
+  font-size: 62.5%;
+}
 .select-category {
     display: flex;
     flex-direction: column;
@@ -24,8 +26,7 @@
     background-color: #E7E3E3;
   }
 
-  .cat-button:active {
-  }
+  
   .cat-button label,
   .cat-button input {
     display: flex;
@@ -61,10 +62,6 @@
     font-family: "Roboto mono";
   }
 
-  .cat-del-but {
-    
-  }
-
   .delete-cat-btn {
     
     background-color: red;
@@ -84,6 +81,7 @@
   .add-new-cat label {
     font-family: "Poppins";
     font-weight: 500;
+    font-size: 2rem;
     color: #838383;
     margin-bottom: 0.25rem;
   }

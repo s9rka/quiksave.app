@@ -1,14 +1,26 @@
+$color-black: #232526; 
+$color-white: #FFFBF8;
+$color-beige: #F6CDBC;
+$color-dark-grey: #34393b;
+$color-light-grey: #919A9E;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+
+
 body {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.7;
-    color: #777;
+    color: $color-dark-grey;
 }
 
 .header {
@@ -30,16 +42,15 @@ body {
 }
 
 .hero-header {
-    color:#232526;
+    color: $color-black;
     margin-bottom: 1rem;
 }
 
 .hero-header-main {
     display: block;
-    font-size: 3.25rem;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 0.5rem;
+    font-size: 5.6rem;
+    font-weight: 600;
+    letter-spacing: 0.4rem;
 
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -49,9 +60,9 @@ body {
 
 .hero-header-sub {
     display: block;
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: .2rem;
 
     animation-name: moveInRight;
     animation-duration: 1s;
@@ -60,24 +71,23 @@ body {
 
 .hero-logo {
     display: inline-block;
-    
 }
 
 .hero-logo:hover {
     animation-name: logoHover;
     animation-duration: 3s;
     animation-timing-function: ease-out;
-    
 }
+
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px)
+        transform: translateX(-10rem)
     }
 
     80% {
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
 
     100% {
@@ -89,11 +99,11 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(80px)
+        transform: translateX(8rem)
     }
 
     80% {
-        transform: translateX(-5px);
+        transform: translateX(-.5rem);
     }
 
     100% {
@@ -118,28 +128,34 @@ body {
     text-decoration: none;
     display: inline-block;
     padding: 0.8rem 1.4rem;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     transition: all .1s;
 }
 
 .button:hover {
-    transform: translateY(-1px);
-    color: #232526;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-.1rem);
+    color: $color-black;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     
 }
 
 .button:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.button:focus {
+    border-color: green;
+    
 }
 
 .button {
     font-family: "Roboto mono", monospace;
-    font-size: 1.25rem;
-    margin-top: 3rem;
+    font-size: 2rem;
+    margin-top: 2rem;
     font-weight: 500;
 }
+
 
 
 
