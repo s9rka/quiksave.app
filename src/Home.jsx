@@ -67,8 +67,9 @@ function Home() {
         </div>
         <div id="start">
         </div>
+        
         <Input />
-      
+        <div id="proov"></div>
       
           
     </div>);

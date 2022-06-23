@@ -68,13 +68,15 @@
     }
 }
 
-a, a:visited, a:hover, a:active {
+.button-next, button-next:visited, button-next:hover, button-next:active {
     color: inherit;
   }
 
 .button-back {
     margin-bottom: 16rem;
     margin-top:0;
+    color: #c6c7c3;
+
 
     &:hover {
         transform: translateY(-.1rem);

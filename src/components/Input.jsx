@@ -5,6 +5,7 @@ import '../css/Categories.scss';
 import '../css/Input.scss';
 import '../css/Home.scss';
 import { HashLink as Link } from 'react-router-hash-link';
+import Breadcrumbs from './Breadcrumbs';
 
 
 
@@ -98,7 +99,7 @@ function Input() {
     
     return (
         <div>
-            
+            < Breadcrumbs />
             <div className="column">
                 <div className="row1">
                     <div className="title-column">
@@ -106,7 +107,7 @@ function Input() {
                         <div className="input-heading"><label>Content</label> <br /></div>
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" rows="3" cols="45" placeholder="Title, sentence, conversation, thought etc. you want to keep"  ref={whatRef} type="text"/> <br />
+                    <textarea className="input-field" tabindex="1" rows="3" cols="45" placeholder="Title, sentence, conversation, thought etc. you want to keep"  ref={whatRef} type="text"/> <br />
                     <div class="next-button">
                         <Link to="/#source" class="button button-next">Next</Link>
                         <div>▼</div>
@@ -114,16 +115,16 @@ function Input() {
                 </div>
                  
                 </div>
-                <div id="source"/>
+                <div id="source" tabindex="-1"/>
                 <div className="row2">
                     <div className="title-column">
                         <div>▲</div>
-                        <div><Link to="/#start" className='button button-back'>Previous</Link></div>
+                        <div><Link to="/#start" tabindex="-1" className='button button-back'>Previous</Link></div>
                         <div className="number">II</div>
                         <div className="input-heading"><label>Source</label> <br /></div> 
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" rows="3" cols="45" placeholder="Situation, citation, reference, link etc. aka source"  id="how" ref={howRef} type="text" /> <br />
+                    <textarea className="input-field" tabindex="2" rows="3" cols="45" placeholder="Situation, citation, reference, link etc. aka source"  id="how" ref={howRef} type="text" /> <br />
                     <div class="next-button">
                         <Link to="/#meaning" class="button button-next">Next</Link>
                         <div>▼</div>
@@ -131,16 +132,16 @@ function Input() {
                     </div>
                 </div>
                 
-                <div id="meaning"/>
+                <div id="meaning" tabindex="-1"/>
                 <div className="row3">
                     <div className="title-column">
                         <div>▲</div>
-                        <div><Link to="/#source" className='button button-back'>Previous</Link></div>
+                        <div><Link to="/#source" tabindex="-1" className='button button-back'>Previous</Link></div>
                         <div className="number">III</div>
                         <div className="input-heading"><label>Meaning</label> <br /></div>
                     </div>
                     <div className="input-container">
-                    <textarea className="input-field" rows="3" cols="45" placeholder="How is it important to you; what it means to you" ref={whyRef} type="text" /> <br /> 
+                    <textarea className="input-field" tabindex="3" rows="3" cols="45" placeholder="How is it important to you; what it means to you" ref={whyRef} type="text" /> <br /> 
                     <div class="next-button">
                         <Link to="/#start" class="button button-next">Next</Link>
                         <div>▼</div>
