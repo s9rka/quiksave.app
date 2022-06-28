@@ -1,3 +1,5 @@
+@import "./Home.scss";
+
 
 .column {
     position: relative;
@@ -6,6 +8,7 @@
 .row1 {
     margin-top: 20rem;
     height: 100vh;
+
 }
 
 .row2 {
@@ -16,8 +19,6 @@
 .row3 {
     margin-top: 3.2rem;
     height: 100vh;
-
-    
 }
 
 .number {
@@ -85,4 +86,19 @@
         
         
     }
+}
+
+
+.submit-button {
+    padding: .8rem 12rem;
+    background-size: cover;
+    background: $color-black;
+    cursor: pointer;
+    border-radius: .8rem;
+    color: $color-white;
+
+    &:hover {
+        color: $color-white; 
+    }
+
 }

@@ -1,9 +1,12 @@
 
 
-$color-black: #232526; 
+$color-black: #2D2C2C; 
 $color-white: #FFFBF8;
-$color-beige: #F6CDBC;
-$color-dark-grey: #34393b;
+$color-orange: #F6CFBE;
+$color-pink: #B290A0;
+$color-light-blue: #BADDF2;
+$color-blue: #83A4B9;
+$color-dark-grey: #5E6467;
 $color-light-grey: #919A9E;
 
 * {
@@ -161,6 +164,8 @@ body {
 .button-black, button-black:visited, button-black:hover, button-black:active {
     color: inherit;
   }
+
+
 
 
 

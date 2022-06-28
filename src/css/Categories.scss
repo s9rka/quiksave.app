@@ -2,13 +2,13 @@
 
 .row4 {
   height: 100vh;
-  position: relative
+  margin-top: 3.2rem;
+  
 }
 .category-tag-container {
-  
   display: flex;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   
 }
 
@@ -18,12 +18,16 @@
 }
 
 .inner {
-  padding: 1rem 1rem .5rem 1rem;
-  border-radius: .3rem;
+  padding: 1rem;
+  border-radius: 1rem;
   box-shadow: 
   7px 7px 5px rgba(0,0,0,.04),
   -7px -7px 5px rgba(255,255,255,.8);
   border: 2px solid rgb(235,235,235);
+}
+
+.inner:hover {
+  background-color: $color-white;
 }
 
 input[type=checkbox] {
@@ -35,17 +39,19 @@ input[type=checkbox] {
     display: grid;
     grid-template-columns: auto 3fr;
 
+
     svg {
       width: 2.4rem;
-      stroke: rgb(0,124,226);
-      stroke-width: 4px;
+      stroke: $color-orange;
+      stroke-width: 1rem;
       fill: white;
-      margin-right: .5rem;
+      margin-right: 1rem;
+      margin-top: .25rem;
 
       .box {
         stroke-dasharray: 320;
         stroke-dashoffset: 0;
-        stroke-width: 6px;
+        stroke-width: 1.6rem;
         fill: white;
         transition: .3s;
       }
@@ -59,7 +65,9 @@ input[type=checkbox] {
     }
 
     span {
-      font-family: "roboto mono";
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      text-transform: capitalize;
     }
   }
 
@@ -69,16 +77,15 @@ input[type=checkbox] {
       transition: stroke-dashoffset .3s linear;
     }
     .check {
-      stroke-dashoffset: 0;
+      stroke-dashoffset: 360;
       transition: stroke-dashoffset .3s linear;
-      fill: rgb(0,124,226);
+      fill: purple;
       opacity: 1;
     }
   }
 }
 
 .button-delete-tag {
-  display: none;
 }
 
 .add-new-tag {
@@ -97,7 +104,7 @@ input[type=checkbox] {
 
 .tag-input:focus {
   outline: none;
-  border-color: $color-beige;
+  border-color: $color-blue;
 }
 
 .button-add-tag {
@@ -113,13 +120,66 @@ input[type=checkbox] {
 }
 
 .button-add-tag:hover {
-  color: $color-light-grey;
   box-shadow: .15rem .15rem .05rem rgba(0, 0, 0, 0.1);
   
 }
 
 .button-add-tag:active {
   
-  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
+  
 }
 
+.tag-generator {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.wrapper {
+  display: inline-flex;
+  
+  margin-bottom: 6rem;
+  
+}
+
+.wrapper .icon {
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2;
+  cursor: pointer;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.1);
+  padding: .8rem 1.2rem;
+  border-radius: 1.2rem;
+}
+
+.wrapper .icon span {
+  position: relative;
+  display: block;
+  border-radius: 3rem;
+  z-index: 2;
+  text-align: center;
+
+}
+
+.wrapper .icon span svg {
+  line-height: 5rem;
+}
+
+.wrapper .icon .tooltip {
+  
+}
+
+.category-heading {
+  font-size: 3.2rem; 
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.end-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
