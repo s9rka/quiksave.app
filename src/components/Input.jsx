@@ -148,23 +148,32 @@ function Input() {
                     </div>
                     </div>
                 </div>
-                
-                {categories.map(element => 
-                <div className='category-container'>           
-                        <div className="cat-button">
-                        <input ref={submitCategoryRef} value={JSON.stringify(element.name)} id={element.name} name="category" type="checkbox" onChange={handleCheck} />
-                        <label class="btn btn-default" for={element.name}>
-                            {element.name}
-                        </label>
-                        <button className="delete-cat-btn" onClick={() => deleteCategory(element)}>delete</button>
-                        </div>   
-                </div>)}
 
-                <div className='add-new-cat'>
-                    <label>Add category</label>
-                    <input ref={categoryRef} type="text" />
-                    <button onClick={() => addCategory()}>ADD</button>
+                <div className="row4">
+                <h2 className="category-heading">Choose Category</h2>
+                <div className='category-tag-container'>   
+                    {categories.map(element => 
+                        <div className='category-tags'>
+                            <div className="inner">      
+                                <input ref={submitCategoryRef} value={JSON.stringify(element.name)} id={element.name} name="category" type="checkbox" onChange={handleCheck} />
+                                <label class="button-checkbox" for={element.name}>
+                                <svg viewBox="0 0 84.5 84.5">
+                                    <path class="box" d="M11,3H81.5a0,0,0,0,1,0,0V73.5a8,8,0,0,1-8,8H3a0,0,0,0,1,0,0V11a8,8,0,0,1,8-8Z"/><path class="check" d="M22.2,22.2H58.3a4,4,0,0,1,4,4V62.3a0,0,0,0,1,0,0H26.2a4,4,0,0,1-4-4V22.2A0,0,0,0,1,22.2,22.2Z"/></svg>
+                                    <span>{element.name}</span>
+                                </label>
+                                <button className="button button-delete-tag" onClick={() => deleteCategory(element)}>delete</button>   
+                            </div>
+                        </div>)}
                 </div>
+                    <div className="tag-generator">
+                        <label className='add-new-tag'>Add new tags</label>
+                        <input className='tag-input' ref={categoryRef} type="text" />
+                        <button className="button-add-tag" onClick={() => addCategory()}>ADD</button>
+                    </div> 
+                    
+                </div>
+
+                    
                     
                       
                 
