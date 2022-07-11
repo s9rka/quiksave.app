@@ -30,8 +30,10 @@ body {
 
 .header {
     position: relative;
-    height: 95vh;
-    background-image: linear-gradient(to right bottom, #f6cfbe, hsla(332, 18%, 63%, 0.6), hsla(203, 28%, 62%, 0.45), hsla(203, 69%, 84%, 0.511) );
+    height: 100vh;
+    background: #4568dc20;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right bottom,#f6cfbed7, rgba(48, 77, 80, 0.125), #47467720, #f6cfbe85); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-position: top;
     padding: 2rem;
@@ -53,10 +55,8 @@ body {
 
 .hero-header-main {
     display: block;
-    font-size: 5.6rem;
+    font-size: 5.2rem;
     font-weight: 600;
-    letter-spacing: 0.4rem;
-
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -65,7 +65,7 @@ body {
 
 .hero-header-sub {
     display: block;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 400;
     letter-spacing: .2rem;
 
@@ -163,6 +163,29 @@ body {
 
 .button-black, button-black:visited, button-black:hover, button-black:active {
     color: inherit;
+  }
+
+  @media screen and (max-width: 640px) {
+
+    .hero-header-box {
+        
+        width: 80vw;
+    }
+    .hero-header-main {
+        
+        font-size: 3.2rem;
+        line-height: none;
+    }
+    .hero-header-sub {
+        font-size: 1.6rem;
+        letter-spacing: 0rem;
+    }
+
+    .button-black {
+        margin-top: 4rem;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
   }
 
 

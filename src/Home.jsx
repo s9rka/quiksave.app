@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import "./css/Home.scss"
 import Input from './components/Input.jsx';
 import FlipCard from './components/FlipCard';
+import Storage from './components/Storage';
 import './css/FlipCard.scss';
 import { HashLink as Link } from 'react-router-hash-link';
 
@@ -11,40 +12,17 @@ function Home() {
   const [flipCards, setFlipCards] = useState([]);
   const dbUrl = "https://store-your-mind-default-rtdb.europe-west1.firebasedatabase.app/memories.json"
 
-  useEffect(() => {  
-    fetch(dbUrl).then(response => response.json())
-    .then(responseBody => {
-      const memoriesFromDb = [];
-      for (const key in responseBody) {
-          memoriesFromDb.push(responseBody[key]);
-        }
-      setMemories(memoriesFromDb);
-      const cardOutput = memoriesFromDb.map((element, index) => {return  {id: index +1, variant: "click", front: element.what, front1: element.category, back1: element.how, back2: element.why}})
-      setFlipCards(cardOutput);
-    })
-  },[]);
+  
 
-  function deleteMemory(flipCard) {
-    const index = flipCards.findIndex(element => element.id === flipCard.id);
-    flipCards.splice(index,1);
-    setMemories(flipCards.slice());
-
-    fetch(dbUrl, {
-        method: "PUT",
-        body: JSON.stringify(memories),
-        "headers": {
-            "Content-Type": "application/json"
-        }
-    })
-  }
+  
 
   return (
     <div className="App">
         <div className='header'>
           <div class='hero-header-box'>
             <h1 class="hero-header">
-              <span class="hero-header-main">Store Your Mind</span>
-              <span class="hero-header-sub">A tool to observe your thoughts</span>
+              <span class="hero-header-main">Catch Your Dreams</span>
+              <span class="hero-header-sub">Quick and simple notepad</span>
             </h1>
             <div class="hero-logo">
               <svg width="140" height="140" viewBox="0 0 205 178" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,11 +43,12 @@ function Home() {
             </div>
           </div>
         </div>
-        <div id="start">
-        </div>
         
+        
+        <div id="start" />
         <Input />
-        <div id="proov"></div>
+        <Storage />
+        
       
           
     </div>);
@@ -78,11 +57,17 @@ function Home() {
 export default Home;
 
 
-/*<div className="container">
-            {flipCards.map((card) => (
-              <div><button onClick={() => deleteMemory(card)}className='test-button'>button</button> 
-              <FlipCard key={card.id} card={card} />
-
-              </div>  
-            ))}
-          </div> */
+// FLip cardi jaoks
+/* useEffect(() => {  
+  fetch(dbUrl).then(response => response.json())
+  .then(responseBody => {
+    const memoriesFromDb = [];
+    for (const key in responseBody) {
+        memoriesFromDb.push(responseBody[key]);
+      }
+    setMemories(memoriesFromDb);
+    const cardOutput = memoriesFromDb.map((element, index) => {return  {id: index +1, variant: "click", front: element.what, front1: element.category, back1: element.how, back2: element.why}})
+    setFlipCards(cardOutput);
+  })
+},[]);
+*/
