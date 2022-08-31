@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
+import '../css/Storage.scss';
 
 
 function Storage() {
@@ -18,8 +19,8 @@ function Storage() {
     })
   },[]);
 
-  function deleteNote(note) {
-    const index = stored.findIndex(element => element.id === stored.id);
+  function deleteNote(storedNote) {
+    const index = stored.findIndex(element => element.note.id === storedNote.note.id);
     stored.splice(index,1);
     setStored(stored.slice());
 
@@ -34,12 +35,23 @@ function Storage() {
 
   return (
     <div>
-        Storage
-        <div>
-            { stored.map(element =>
-                <div>
-                    {element.note}
-                    <button onClick={() => deleteNote(element)}>delete</button>
+        <h1 className='heading-one'>Storage</h1>
+        <div className='storage'>
+            { stored.map(element => 
+                <div className='post'>
+                    <div className="post-head">
+                        <div className="post-category-container">
+                            <div className="category">{element.category[0]}</div>
+                            { element.category.length > 1 && <div className='category'>{element.category[1]}</div> }
+                            { element.category.length > 2 && <div className='category'>{element.category[2]}</div> }
+                        </div>
+
+                        <div className="date">12.12.22</div>
+
+                    </div>
+                    <div className="note">{element.note.substring(0, 77)}...</div>
+                    
+                    <button className='delete-button' onClick={() => deleteNote(element)}>delete</button>
                 </div>)}
         </div>
     </div>

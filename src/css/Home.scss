@@ -24,8 +24,8 @@ html {
 body {
     font-weight: 400;
     font-size: 1.6rem;
-    line-height: 1.7;
-    color: $color-dark-grey;
+    line-height: 1.5;
+    color: #061822;
 }
 
 .header {
@@ -184,6 +184,10 @@ body {
     .button-black {
         margin-top: 4rem;
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
+    .header {
+        display: none;
     }
 
   }

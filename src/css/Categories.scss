@@ -1,7 +1,7 @@
 @import "./Home.scss";
 
 .row4 {
-  height: 100vh;
+  
   margin-top: 3.2rem;
   
   
@@ -10,18 +10,8 @@
   display: flex;
   justify-content: center;
   align-content: space-between;
-  margin-bottom: 2rem;
+  margin: 2rem 0rem;
   flex-wrap: wrap;
-  margin-top: 4rem;
-  
-}
-
-.category-tags {
-  margin: 1rem;
-  
-  justify-items: center;
-  
-  
   
 }
 
@@ -32,6 +22,8 @@
   7px 7px 5px rgba(0,0,0,.04),
   -7px -7px 5px rgba(255,255,255,.8);
   border: 2px solid rgb(235,235,235);
+  display: flex;
+  flex-direction: row;
   
 }
 
@@ -148,11 +140,6 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
-.button-add-tag:hover {
-  
-  
-}
-
 .tag-generator {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -163,6 +150,23 @@ input[type=checkbox] {
 
 }
 
+.manage-tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.manage-tags-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgb(197, 232, 155);
+    border-radius: 4px;
+
+    
+}
 
 
 .wrapper {
@@ -198,14 +202,17 @@ input[type=checkbox] {
   line-height: 5rem;
 }
 
-.wrapper .icon .tooltip {
-  
-}
-
 .category-heading {
-  font-size: 3.2rem; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 2rem;
+    
+    font-size: 3.2rem; 
     margin-bottom: 2rem;
     font-weight: 600;
+    margin-left: 1rem;
 }
 
 .end-column {
@@ -221,4 +228,41 @@ input[type=checkbox] {
     font-size: 2.4rem;
     font-weight: 400;
   }
+
+  .category-tags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  
+  }
+
+  .inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inner span {
+    font-size: 1.4rem;
+  }
+
+  .category-tag-container {
+    width: 90vw;
+    flex-direction: column;
+  }
+
+  .wrapper {
+    margin-bottom: 0;
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 2.4rem;
+}
 }

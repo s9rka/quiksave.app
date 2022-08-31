@@ -1,17 +1,15 @@
 import { useRef, useState, useEffect } from 'react';
 import "./css/Home.scss"
 import Input from './components/Input.jsx';
-import FlipCard from './components/FlipCard';
 import Storage from './components/Storage';
+import Proovikas from './components/Proovikas';
 import './css/FlipCard.scss';
 import { HashLink as Link } from 'react-router-hash-link';
 
 
 function Home() {
-  const [memories, setMemories] = useState([]);
-  const [flipCards, setFlipCards] = useState([]);
-  const dbUrl = "https://store-your-mind-default-rtdb.europe-west1.firebasedatabase.app/memories.json"
-
+  
+  
   
 
   
@@ -44,10 +42,12 @@ function Home() {
           </div>
         </div>
         
-        
         <div id="start" />
         <Input />
-        <Storage />
+
+
+    
+        
         
       
           
