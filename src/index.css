@@ -3,7 +3,8 @@ body, html {
   font-family: -apple-system, BlinkMacSystemFont, 'poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FFFBF8;
+  background-color: rgba(83, 94, 118, 0.04);
+  height: 100vh;
 }
 
 code {

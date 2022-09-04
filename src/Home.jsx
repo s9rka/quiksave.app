@@ -9,23 +9,29 @@ import { HashLink as Link } from 'react-router-hash-link';
 
 function Home() {
   
-  
+  const [showHero, setShowHero] = useState(true);
+  const [showApp, setShowApp] = useState(false);
+
+  const togglehero = () => {
+    setShowHero(current => !current);
+    setShowApp(current => !current);
+  }
   
 
   
 
   return (
     <div className="App">
-        <div className='header'>
-          <div class='hero-header-box'>
-            <h1 class="hero-header">
-              <span class="hero-header-main">Catch Your Dreams</span>
-              <span class="hero-header-sub">Quick and simple notepad</span>
+        <div className={showHero ? "header" : "no-header"}>
+          <div className='hero-header-box'>
+            <h1 className="hero-header">
+              <span className="hero-header-main">Store Your Mind</span>
+              <span className="hero-header-sub">Quick and simple notepad</span>
             </h1>
-            <div class="hero-logo">
+            <div className="hero-logo">
               <svg width="140" height="140" viewBox="0 0 205 178" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M153.435 88.7793L203.825 118.373L153.435 147.967L102.479 177.561V118.373L153.435 88.7793Z" fill="#874B4B"/>
-          <path d="M51.5223 88.7793L0 118.373L51.5223 147.967L102.478 177.561V118.373L51.5223 88.7793Z" fill="#874B4B"/>
+          <path d="M153.435 88.7793L203.825 118.373L153.435 147.967L102.479 177.561V118.373L153.435 88.7793Z" fill="#7C0B2B"/>
+          <path d="M51.5223 88.7793L0 118.373L51.5223 147.967L102.478 177.561V118.373L51.5223 88.7793Z" fill="#7C0B2B"/>
           <path d="M0.565918 59.1855V118.373L51.522 147.967V88.7795L0.565918 59.1855Z" fill="black"/>
           <path d="M204.391 59.6934V118.523L153.78 147.938V89.1082L204.391 59.6934Z" fill="#0083C1"/>
           <path d="M205 59.0742V118.262L153.78 147.856V88.6681L205 59.0742Z" fill="black"/>
@@ -36,14 +42,16 @@ function Home() {
           <path d="M204.881 59.0744L153.661 88.6683L102.44 59.0744L153.661 29.4805L204.881 59.0744Z" fill="black"/>
               </svg>
             </div>
-            <div class="hero-button">
-              <Link to="/#start" class="button button-black">Start</Link>
+            <div onClick={togglehero} className="hero-button">
+              <a className="button button-black">Write</a>
             </div>
           </div>
         </div>
         
-        <div id="start" />
-        <Input />
+        
+
+        {showApp && <Input />}
+        
 
 
     

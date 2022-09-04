@@ -1,4 +1,5 @@
 
+
 .storage {
     
     display: flex;
@@ -10,12 +11,14 @@
 
 .heading-one {
     margin-top: 4rem;
-    margin-left: 1rem;
+    text-align: center;
     font-weight: 600;
-    font-size: 2.8rem;
+    font-size: 2rem;
 }
 
+
 .post {
+    width: 100vw;
     margin-bottom: 1rem;
     border-bottom: 2px dotted #06182228;
     padding-bottom: 1rem;
@@ -35,6 +38,7 @@
     display: flex;
     flex-direction: row;
     padding-left: 4rem;
+    gap: .4rem;
     
 }
 
@@ -45,7 +49,7 @@
     margin: .5rem 0rem;
     margin-top: .15rem;
     box-shadow: 0 1rem 2rem rgba(#061822, .035);
-    background-color: #FFFBF8;
+    background-color: #F8F2EE;
     color: #061822;
     border-radius: 4px;
     text-transform: capitalize;
@@ -65,5 +69,5 @@
 
 .delete-button {
     margin-left: 2rem;
-    display: none;
+    
 }

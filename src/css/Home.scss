@@ -2,8 +2,8 @@
 
 $color-black: #2D2C2C; 
 $color-white: #FFFBF8;
-$color-orange: #F6CFBE;
-$color-pink: #B290A0;
+$color-orange: #F8F2EE;
+$color-pink: #e7c4d4;
 $color-light-blue: #BADDF2;
 $color-blue: #83A4B9;
 $color-dark-grey: #5E6467;
@@ -37,7 +37,10 @@ body {
     background-size: cover;
     background-position: top;
     padding: 2rem;
-    
+}
+
+.no-header {
+    display: none;
 }
 
 .hero-header-box {
@@ -158,39 +161,43 @@ body {
     font-family: "Roboto mono", monospace;
     font-size: 2rem;
     margin-top: 2rem;
+    padding: .8rem 1.6rem;
     font-weight: 500;
+    color: $color-black;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    border-radius: .8rem;
+    cursor: pointer;
 }
 
 .button-black, button-black:visited, button-black:hover, button-black:active {
     color: inherit;
   }
 
-  @media screen and (max-width: 640px) {
+.hero-button {
+    margin-top: 2rem;
+}
 
-    .hero-header-box {
-        
-        width: 80vw;
-    }
+
+
+@media screen and (max-width: 540px) {
     .hero-header-main {
-        
-        font-size: 3.2rem;
-        line-height: none;
+        width: 90vw;
+        font-size: 3.6rem;
+        font-weight: 600;
+        line-height: 1.3;
     }
+
     .hero-header-sub {
-        font-size: 1.6rem;
-        letter-spacing: 0rem;
+        font-size: 1.8rem;
     }
+}
 
-    .button-black {
-        margin-top: 4rem;
-        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+@media screen and (max-width: 840px) {
+    .hero-header-main {
+        width: 90vw;
     }
+}
 
-    .header {
-        display: none;
-    }
-
-  }
 
 
 

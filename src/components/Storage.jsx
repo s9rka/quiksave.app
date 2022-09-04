@@ -20,7 +20,7 @@ function Storage() {
   },[]);
 
   function deleteNote(storedNote) {
-    const index = stored.findIndex(element => element.note.id === storedNote.note.id);
+    const index = stored.findIndex(element => element.note === storedNote.note);
     stored.splice(index,1);
     setStored(stored.slice());
 
@@ -49,7 +49,7 @@ function Storage() {
                         <div className="date">12.12.22</div>
 
                     </div>
-                    <div className="note">{element.note.substring(0, 77)}...</div>
+                    <div className="note">{element.note}</div>
                     
                     <button className='delete-button' onClick={() => deleteNote(element)}>delete</button>
                 </div>)}
