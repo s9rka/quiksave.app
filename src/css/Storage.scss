@@ -1,29 +1,73 @@
+@import "./Home.scss";
 
+.storage-container {
+   padding-top: 3.2rem; 
+}
 
 .storage {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0rem;
+    margin: 0rem 0rem;
 }
 
 .heading-one {
     margin-top: 4rem;
-    text-align: center;
+    margin-left: 1.6rem;
     font-weight: 600;
     font-size: 2rem;
 }
 
+.category-filter-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4rem;
+    padding: 1.6rem;
+    border-right: none;
+    border-left: none;
+}
+
+.category-filterfalse {
+    padding: .8rem 1.6rem;
+    color: $color-blue;
+    font-weight: 500;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.category-filter_active {
+    padding: .8rem 1.6rem;
+    background-color: $color-blue;
+    color: $color-white;
+    border-radius: .4rem;
+    text-transform: capitalize;
+    cursor: pointer;
+}
 
 .post {
     width: 100vw;
     margin-bottom: 1rem;
-    border-bottom: 2px dotted #06182228;
+    border-bottom: 2px dotted rgba($color-black, .2);
     padding-bottom: 1rem;
-    box-shadow: 0 1rem 2rem rgba(#0618223a, .035);
-    
+    background-color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .065);
+    position: relative;
+}
+
+.post-cloudy {
+    width: 100vw;
+    margin-bottom: 1rem;
+    border-bottom: 2px dotted rgba($color-black, .2);
+    padding-bottom: 1rem;
+    background-color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .065);
+    position: relative;
+    opacity: .7;
 }
 
 .post-head {
@@ -37,37 +81,56 @@
 .post-category-container {
     display: flex;
     flex-direction: row;
-    padding-left: 4rem;
+    padding-left: 2rem;
     gap: .4rem;
-    
 }
 
-.category {
+.post-category {
     font-weight: 500;
     margin-right: .25rem;
     padding: 0rem 1rem;
     margin: .5rem 0rem;
-    margin-top: .15rem;
-    box-shadow: 0 1rem 2rem rgba(#061822, .035);
-    background-color: #F8F2EE;
-    color: #061822;
+    margin-top: .5rem;
+    box-shadow: 0 1rem 2rem rgba($color-black, .035);
+    background-color: rgba($color-pink, .35);
+    color: $color-black;
     border-radius: 4px;
     text-transform: capitalize;
+    user-select: none;
+    cursor:auto;
 
     &:hover {
         transform: translateY(-1px);
     }
 }
 
-.date {
-    padding-right: 2rem;
-}
-
 .note {
     padding-left: 2rem;
 }
 
-.delete-button {
-    margin-left: 2rem;
-    
+.more {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    gap: .4rem;
+}
+
+.more-button {
+    padding: .6rem .6rem .1rem .6rem;
+    border-radius: 4px;
+    background-color:rgba($color-black, .035)
+}
+
+@media screen and (min-width: 700px) {
+    .post {
+        width: 60rem;
+    }
+
+    .heading-one {
+        text-align: center;
+    }
+
+    .category-filter-container {
+        justify-content: center;
+    }
 }

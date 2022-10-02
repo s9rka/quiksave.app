@@ -1,13 +1,13 @@
 
 
-$color-black: #2D2C2C; 
+$color-black: #202124; 
 $color-white: #FFFBF8;
-$color-orange: #F8F2EE;
-$color-pink: #e7c4d4;
-$color-light-blue: #BADDF2;
-$color-blue: #83A4B9;
-$color-dark-grey: #5E6467;
-$color-light-grey: #919A9E;
+
+$color-blue: #404ECF;
+$color-baby: #D3E2FF;
+$color-pink: #E0B1CB;
+$color-purple: #5E548E;
+
 
 * {
     margin: 0;
@@ -18,14 +18,14 @@ $color-light-grey: #919A9E;
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    background-color: $color-white;
   }
-
 
 body {
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.5;
-    color: #061822;
+    color: $color-black;
 }
 
 .header {
@@ -33,10 +33,13 @@ body {
     height: 100vh;
     background: #4568dc20;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right bottom,#f6cfbed7, rgba(48, 77, 80, 0.125), #47467720, #f6cfbe85); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right bottom, #e0b1cb87, rgba(88, 131, 138, 0.125), rgba(139, 138, 202, 0.23), #D3E2FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-position: top;
     padding: 2rem;
+
+    // linear-gradient(to right bottom,#f6cfbed7, rgba(48, 77, 80, 0.125), #47467720, #f6cfbe85); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    // background: linear-gradient(to right bottom,#f6cfbed7, rgba(88, 131, 138, 0.125), rgba(139, 138, 202, 0.23), #cf8e733b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .no-header {
@@ -62,8 +65,7 @@ body {
     font-weight: 600;
     animation-name: moveInLeft;
     animation-duration: 1s;
-    animation-timing-function: ease-out;
-    
+    animation-timing-function: ease-out;   
 }
 
 .hero-header-sub {
@@ -71,7 +73,6 @@ body {
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: .2rem;
-
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -79,6 +80,8 @@ body {
 
 .hero-logo {
     display: inline-block;
+    position: relative;
+    padding: 2rem;
 }
 
 .hero-logo:hover {
@@ -86,7 +89,6 @@ body {
     animation-duration: 3s;
     animation-timing-function: ease-out;
 }
-
 
 @keyframes moveInLeft {
     0% {
@@ -143,28 +145,21 @@ body {
 .button:hover {
     transform: translateY(-.1rem);
     color: $color-black;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-    
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
 }
 
 .button:active {
     transform: translateY(-.1rem);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.button:focus {
-    border-color: green;
-    
+    box-shadow: 0 .5rem 1rem rgba($color-black, .2);
 }
 
 .button {
-    font-family: "Roboto mono", monospace;
     font-size: 2rem;
     margin-top: 2rem;
     padding: .8rem 1.6rem;
     font-weight: 500;
     color: $color-black;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
     border-radius: .8rem;
     cursor: pointer;
 }
@@ -176,8 +171,6 @@ body {
 .hero-button {
     margin-top: 2rem;
 }
-
-
 
 @media screen and (max-width: 540px) {
     .hero-header-main {

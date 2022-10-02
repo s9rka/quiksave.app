@@ -1,69 +1,55 @@
 @import "./Home.scss";
 
-
-
-
-
 .my-notes {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-end;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
 }
 
 .link {
-    text-decoration: none;
-    
-}
-
-.note-date {
-    display: flex;
-    font-size: 2rem;
-    padding-left: 2rem;
-    margin-bottom: .5rem;
-
+    text-decoration: none;   
 }
 
 .notes-button {
-    
     box-shadow: 2px 2px 6px (rgba($color-black, .2)),
     -2px -2px 2px (rgba($color-black, .1));
     display: flex;
-    align-items:flex-end;
+    justify-content: flex-end;
+    align-items:center;
     gap: .75rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 500;
     padding: .75rem 1rem;
     border-radius: 6px;
-    
     color: $color-black;
-    margin-bottom: 2rem;
-    
 }
 
-
 .input-container {
-    width: 100vw;
     padding: 2rem 1rem;
     box-shadow: none;
     border-radius: 0px;            
     display: flex;
     flex-direction: column;
-    height: 40%;
-    
+    border: 2px solid rgba($color-black, .12);
+    border-radius: 1.2rem;
+    margin: 0rem .4rem;
     
 }
 
 .input-container-active {
-    width: 100vw;
     padding: 2rem 1rem;
     box-shadow: none;
     border-radius: 0px;            
     display: flex;
     flex-direction: column;
-    height: 40%;
+    border: 2px solid rgba($color-black, .2);
+    border-radius: 1.2rem;
+    margin: 0rem .4rem;
     opacity: .3;
-
 }
 
 
@@ -72,11 +58,11 @@
     border: none;
     padding: 2rem 2rem;
     font-size: 1.6rem;
-    border-radius: 1.2rem;
-    background-color: rgb(255, 255, 255);
-    font-family: "roboto mono", monospace;
+    background-color: $color-white;
+    font-family: 'Rubik', sans-serif;
     width: 100%;
-    height: 30vh;
+    height: 18vh;
+    cursor: pointer;
 
     &:focus {
         outline: none !important;
@@ -84,7 +70,8 @@
 
     &::placeholder {
         font-size: 1.4rem;
-        color: $color-black
+        color: $color-black;
+        font-style: italic;
     }
 }
 
@@ -92,8 +79,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   
-    
+    margin-bottom: -1rem;
 }
 
 .submit-button {
@@ -101,26 +87,26 @@
     align-items: center;
     justify-content: center;
     gap: .8rem;
-    padding: 1rem 5rem;
+    padding: 1rem 3rem;
+    width: 100%;
     height: 5rem;
-    margin-top: 3rem;
+    margin-top: 4rem;
     border-radius: .8rem;
-    background: #F7C1C1;
-    cursor: pointer;
-    color: rgba(13, 24, 33, 0.848);
-    font-family: "Poppins", sans-serif;
-    font-size: 1.8rem;
     font-weight: 600;
-    box-shadow: 0 1rem 2rem rgba(#061822, .2);
-    &:hover {
-        transform: translateY(-0.1rem);
-        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    font-size: 1.6rem;    
+    cursor: pointer;
+    background: linear-gradient(to right top, #e0b1cbc8, #be95c4c1, #9f86c078, #5e548e66);
 
+    &:hover {
+        background-position: right center; /* change the direction of the change here */
+        text-decoration: none;
+        box-shadow: 0 .25rem 1rem rgba($color-black, .1);   
+    }
         &::after {
             transform: scaleX(1.4) scaleY(1.6);
             opacity: 0;
         }
-    }
+    
 
     &:active {
         transform: translateY(-1px);
@@ -145,7 +131,6 @@
         background-color: transparent;
     }
 
-
     .input-container-active {
         width: 70%;
         background-color: transparent;
@@ -153,15 +138,19 @@
 
     .row1 {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
+    .my-notes {
+        margin-top: 2rem;
+    }
+
     .submit-button {
         font-size: 2.2rem;
-        font-weight: 600;
+        font-weight: 500;
         gap: 1.2rem;
-        
     }
 }
 
@@ -173,7 +162,6 @@
         width: 50%;
     }
 }
-
 
 @media screen and (min-width: 1300px) {
     .input-container {

@@ -5,12 +5,7 @@ import Home from './Home';
 import Storage from './components/Storage';
 
 
-
-
 export default function App() {
-
-  
-
   return (
         <Routes>
             <Route path="" exact element={ <Home /> } />

@@ -1,21 +1,13 @@
 @import "./Home.scss";
 
-.row4 {
-  
-  margin-top: 3.2rem;
-  
-  
-}
 .category-tag-container {
-    position: relative;
-    
+  position: relative; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-content: space-between;
   margin: 0rem 0rem;
   flex-wrap: wrap;
-  
 }
 
 .category-tags {
@@ -24,16 +16,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: .5rem;
-    padding: 0rem 1rem;
-  
-  }
+    position: relative;
+}
 
 .inner {
-  padding: .5rem 1rem;
-  border-radius: 1rem;
-  box-shadow: 
-  7px 7px 5px rgba(0,0,0,.04);
-  border: 2px solid rgb(215, 215, 215);
+  padding: .75rem 1rem;
+  border-radius: .4rem;
+  background-color: $color-white;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -41,28 +30,37 @@
   gap: .6rem;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
+  cursor: auto; 
+  position: relative; 
 
-  
+  &:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(-45deg, rgba($color-blue, .45) 0%, rgba($color-purple, .45) 33%, rgba($color-blue, .45) 66%, rgba($color-purple, .45) 100%);
+    filter: blur(4px);   
+  }
 }
 
 input[type=checkbox] {
   display: none;
   pointer-events: none;
 
-
   & + label {
-    cursor: pointer;
     display: grid;
     grid-template-columns: auto 3fr;
-
-
+    
     svg {
-      width: 2rem;
-      stroke: #4B4A67;
+      width: 2.42rem;
+      stroke: rgba($color-black, .85);
       stroke-width: 1rem;
       fill: white;
       margin-right: 1rem;
-      
+      cursor: pointer;
 
       .box {
         stroke-dasharray: 320;
@@ -71,18 +69,19 @@ input[type=checkbox] {
         fill: white;
         transition: .3s;
       }
+
       .check {
         stroke-dasharray: 360;
         stroke-dashoffset: 360; // 0 toob esile
-        fill: rgb(0,124,226);
+        fill: $color-blue;
         opacity: 0;
         transition: .3s;
       }
     }
 
     span {
-      font-family: "Poppins", sans-serif;
-      font-size: 1.3rem;
+      font-family: "Rubik", sans-serif;
+      font-size: 1.4rem;
       font-weight: 500;
       text-transform: capitalize;
     }
@@ -96,38 +95,10 @@ input[type=checkbox] {
     .check {
       stroke-dashoffset: 360;
       transition: stroke-dashoffset .3s linear;
-      fill: #7C0B2B;
+      fill: $color-blue;
       opacity: 1;
     }
   }
-}
-
-
-.tag-input {
-  width: 80%;
-  height: 4.8rem;
-  font-family: "Roboto mono";
-  justify-content: center;
-  
-  border-color: transparent;
-  padding: 1rem 2rem;
-  border-radius: .4rem 0rem 0rem .4rem;
-  box-shadow: 
-  7px 7px 5px rgba(0,0,0,.04);
-  border: 2px solid rgb(235,235,235);
-
-  &::placeholder {
-    color: $color-black;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-}
-
-.tag-input:focus {
-  outline: none;
-  z-index: 1;
-  border: 2.2px solid rgb(235,235,235);
-  
 }
 
 .button-delete-tag {
@@ -147,75 +118,91 @@ input[type=checkbox] {
   transform: translateY(-.1rem);
 }
 
-
-.button-add-tag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 4.8rem;
-  padding: 1.5rem 1.5rem;
-  border-radius: 0rem .6rem .6rem 0rem;
-  fill: #fff;
-  background-color: #0d18212d;
-  box-shadow: 
-  7px 7px 6px rgba(0,0,0,.04),
-  -3px -3px 6px rgba(0,0,0,.04);
-  border: 1px solid (rgba($color-light-grey, .1));
-  
-  z-index: 2;
-  
-  cursor: pointer;
-}
-
 .tag-generator {
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 2;
-    width: 100vw;
-    height: 100vh;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  
-
+    display: flex;
+    align-items: center;
+    justify-content: center;  
 }
 
 .generator-container {
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    
+    &:before {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(-45deg, rgba($color-blue, .45) 0%, rgba($color-purple, .45) 33%, rgba($color-blue, .45) 66%, rgba($color-purple, .45) 100%);
+        filter: blur(4px); 
+    }
+}
+
+.tag-input {
+    padding: 1.11rem 1rem;
+    border-radius: .4rem 0rem 0rem .4rem;
+    background-color: $color-white;
+    width: 15rem;
+    border:0;
+    outline:0;
+    font-family: "Rubik", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    
+    &::placeholder {
+      color: rgba($color-black, .85);
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  }
+  
+  .tag-input:focus {
+    outline: none;  
+  }
+
+.button-add-tag {
+    padding: 0rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0rem .6rem .6rem 0rem;
+    border-left: transparent;
+    z-index: 2;
+    cursor: pointer;
+    background-color: $color-white; 
 }
 
 .manage-tags {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: .8rem;
-    background-color: (rgba($color-light-grey, .15));
-    border-radius: 4px;
+    padding: 1.4rem;    
+    border-radius: 1000px;
+    position: relative;
+
+    &:hover {
+        background-color: (rgba($color-baby, .42));
+    }
 }
 
 .manage-tags-active {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: .8rem;
-    background-color: (rgba($color-light-grey, .35));
-    border-radius: 4px;
+    background-color: (rgba($color-baby, 0.64));
+    padding: 1.4rem;    
+    border-radius: 1000px;
 }
-
 
 .wrapper {
   display: inline-flex;
   gap: .5rem;
-  margin-bottom: 0rem;
-  
+  margin-bottom: 0rem; 
 }
 
 .wrapper .icon {
@@ -226,10 +213,8 @@ input[type=checkbox] {
   flex-direction: column;
   z-index: 2;
   cursor: pointer;
-  
   padding: .8rem 1.2rem;
   border-radius: 1.2rem;
-
 
     & span {
         position: relative;
@@ -237,7 +222,6 @@ input[type=checkbox] {
         border-radius: 3rem;
         z-index: 2;
         text-align: center;
-
     }
 }
 
@@ -251,21 +235,13 @@ input[type=checkbox] {
     align-items: center;
     justify-content:flex-start;
     gap: 2rem;
-    margin: 1.6rem .4rem;
+    margin: 1.6rem .8rem 1.2rem .8rem;
     font-size: 2rem;
     font-weight: 500;
-
 }
-
-
 
 .button-checkbox {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-
-  @media screen and (min-width: 700px) {
-    
   }
