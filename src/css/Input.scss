@@ -1,13 +1,18 @@
 @import "./Home.scss";
 
+
+.input {
+    height: 100vh;
+}
+
 .my-notes {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-end;
-    margin-top: 2rem;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
+    margin-right: 1.4rem;
+    margin-bottom: 1.4rem;
+    
 }
 
 .link {
@@ -36,11 +41,12 @@
     flex-direction: column;
     border: 2px solid rgba($color-black, .12);
     border-radius: 1.2rem;
-    margin: 0rem .4rem;
+    margin: 4rem .4rem;
     
 }
 
 .input-container-active {
+    margin-top: 3.2rem;
     padding: 2rem 1rem;
     box-shadow: none;
     border-radius: 0px;            
@@ -57,6 +63,7 @@
     resize: none;
     border: none;
     padding: 2rem 2rem;
+    
     font-size: 1.6rem;
     background-color: $color-white;
     font-family: 'Rubik', sans-serif;
@@ -95,7 +102,7 @@
     font-weight: 600;
     font-size: 1.6rem;    
     cursor: pointer;
-    background: linear-gradient(to right top, #e0b1cbc8, #be95c4c1, #9f86c078, #5e548e66);
+    background: linear-gradient(to right top, #e0b1cba8, #be95c494, #9f86c05e, #5e548e4a);
 
     &:hover {
         background-position: right center; /* change the direction of the change here */
@@ -127,20 +134,20 @@
 
 @media screen and (min-width: 700px) {
     .input-container {
-        width: 70%;
+        width: 70vw;
+        display: flex;
+        justify-content: center;
         background-color: transparent;
+        box-shadow:  12px 12px 41px #bbb7ca98,
+             -12px -12px 41px #fdf7ffae;
     }
 
-    .input-container-active {
-        width: 70%;
-        background-color: transparent;
-    }
-
-    .row1 {
+    .input {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        margin-top: 8rem;
     }
 
     .my-notes {

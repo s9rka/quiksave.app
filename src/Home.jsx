@@ -18,14 +18,14 @@ function Home() {
         <div className={showHero ? "header" : "no-header"}>
           <div className='hero-header-box'>
             <h1 className="hero-header">
-              <span className="hero-header-main">Store Your Mind</span>
-              <span className="hero-header-sub">Quick and simple notepad</span>
+              <span className="hero-header-main">Quiksave</span>
+              <span className="hero-header-sub">Simple notepad</span>
             </h1>
             <div className="hero-logo">
-                <img src={logo}></img>
+                <img src={logo} alt="store-your-mind-logo"></img>
             </div>
-            <div onClick={togglehero} className="hero-button">
-              <a className="button button-black">Write</a>
+            <div className="button-container">
+              <div onClick={togglehero}className="button hero-button">Write</div>
             </div>
           </div>
         </div>

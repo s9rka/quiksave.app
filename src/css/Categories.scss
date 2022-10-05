@@ -20,14 +20,15 @@
 }
 
 .inner {
-  padding: .75rem 1rem;
+  height: 4rem;
+  padding: 0rem .8rem;
   border-radius: .4rem;
+
   background-color: $color-white;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: .6rem;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
   cursor: auto; 
@@ -55,11 +56,11 @@ input[type=checkbox] {
     grid-template-columns: auto 3fr;
     
     svg {
-      width: 2.42rem;
+      height: 2rem;
       stroke: rgba($color-black, .85);
       stroke-width: 1rem;
       fill: white;
-      margin-right: 1rem;
+      margin-right: .64rem;
       cursor: pointer;
 
       .box {
@@ -81,7 +82,7 @@ input[type=checkbox] {
 
     span {
       font-family: "Rubik", sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 500;
       text-transform: capitalize;
     }
@@ -111,6 +112,9 @@ input[type=checkbox] {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-left: 1px solid rgba($color-black, .12);
+    margin-left: .8rem;
+    padding-left: .8rem;
 }
 
 .button-delete-tag:hover {
@@ -144,19 +148,20 @@ input[type=checkbox] {
 }
 
 .tag-input {
-    padding: 1.11rem 1rem;
+    padding: 0rem 1rem;
+    height: 4rem;
     border-radius: .4rem 0rem 0rem .4rem;
     background-color: $color-white;
-    width: 15rem;
+    width: 12rem;
     border:0;
     outline:0;
     font-family: "Rubik", sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500;
     
     &::placeholder {
       color: rgba($color-black, .85);
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 500;
     }
   }
@@ -181,21 +186,20 @@ input[type=checkbox] {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.4rem;    
+    padding: 1.3rem;  
     border-radius: 1000px;
     position: relative;
 
-    &:hover {
-        background-color: (rgba($color-baby, .42));
-    }
+    background-color: (rgba($color-baby, .42));
+
 }
 
 .manage-tags-active {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: (rgba($color-baby, 0.64));
-    padding: 1.4rem;    
+    background-color: (rgba($color-baby, .92));
+    padding: 1.3rem;    
     border-radius: 1000px;
 }
 

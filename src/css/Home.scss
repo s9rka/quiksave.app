@@ -132,16 +132,6 @@ body {
     }
 }
 
-.button:link,
-.button:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0.8rem 1.4rem;
-    border-radius: 1.2rem;
-    transition: all .1s;
-}
-
 .button:hover {
     transform: translateY(-.1rem);
     color: $color-black;
@@ -164,7 +154,7 @@ body {
     cursor: pointer;
 }
 
-.button-black, button-black:visited, button-black:hover, button-black:active {
+.hero-button, hero-button:visited, hero-button:hover, hero-button:active {
     color: inherit;
   }
 
@@ -175,8 +165,8 @@ body {
 @media screen and (max-width: 540px) {
     .hero-header-main {
         width: 90vw;
-        font-size: 3.6rem;
-        font-weight: 600;
+        font-size: 4.2rem;
+        font-weight: 700;
         line-height: 1.3;
     }
 

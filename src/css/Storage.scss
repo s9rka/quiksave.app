@@ -2,6 +2,7 @@
 
 .storage-container {
    padding-top: 3.2rem; 
+   position: relative;
 }
 
 .storage {
@@ -10,6 +11,8 @@
     justify-content: center;
     align-items: center;
     margin: 0rem 0rem;
+    padding-bottom: 103px;
+    position: relative;
 }
 
 .heading-one {
@@ -49,13 +52,36 @@
     cursor: pointer;
 }
 
+.toolbar {
+    padding: .4rem;
+    display: flex;
+    justify-content: flex-end;
+    background: linear-gradient(to left, rgba($color-baby, .2), rgba($color-pink, .2));
+    border-radius: .4rem;
+    margin-top: .4rem;
+    display: none;
+    
+}
+
+.toolbar-active {
+    padding: .4rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    background: linear-gradient(to left, rgba($color-baby, .2), rgba($color-pink, .1));
+    margin-top: .4rem;
+    border-radius: .4rem;
+   
+}
+
 .post {
     width: 100vw;
-    margin-bottom: 1rem;
+    margin-bottom: .2rem;
     border-bottom: 2px dotted rgba($color-black, .2);
     padding-bottom: 1rem;
-    background-color: $color-white;
-    box-shadow: 0 1rem 2rem rgba($color-black, .065);
+    background-color: #fff;
+    box-shadow: 0 .3rem .6rem rgba($color-black, .065);
     position: relative;
 }
 
@@ -78,6 +104,13 @@
     margin-bottom: .5rem;
 }
 
+.delete-button {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .post-category-container {
     display: flex;
     flex-direction: row;
@@ -89,10 +122,10 @@
     font-weight: 500;
     margin-right: .25rem;
     padding: 0rem 1rem;
-    margin: .5rem 0rem;
-    margin-top: .5rem;
+    
+    margin-top: .4rem;
     box-shadow: 0 1rem 2rem rgba($color-black, .035);
-    background-color: rgba($color-pink, .35);
+    background-color: rgba($color-pink, .22);
     color: $color-black;
     border-radius: 4px;
     text-transform: capitalize;
@@ -105,25 +138,54 @@
 }
 
 .note {
-    padding-left: 2rem;
-}
-
-.more {
-    margin-top: 1rem;
-    margin-right: 1rem;
+    padding: 0rem 2rem;
     display: flex;
-    gap: .4rem;
+    flex-direction: column;
 }
 
-.more-button {
-    padding: .6rem .6rem .1rem .6rem;
-    border-radius: 4px;
-    background-color:rgba($color-black, .035)
+.manage {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: .5rem;
+    padding: .5rem;
+    position: fixed;
+        bottom:0;
+         left:0;
+         right:0;
+         z-index:1000;
+    
+}
+
+.add-new {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: sticky;
+    margin: 1.2rem;
+    padding: 2.4rem;
+    border-radius: 18px;
+    background: linear-gradient(to right top, rgba(204, 161, 237, 1), rgba(246, 211, 255, 1), $color-baby);
+    box-shadow:  20px 20px 60px #bbb7ca,
+             -12px -12px 120px #fdf7ff;
 }
 
 @media screen and (min-width: 700px) {
     .post {
         width: 60rem;
+    }
+
+    .storage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .manage {
+        width: 60rem;
+        position: relative;
+        margin-top: 2rem;
     }
 
     .heading-one {
