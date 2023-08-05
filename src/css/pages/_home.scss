@@ -1,0 +1,181 @@
+@import '../abstracts/variables';
+
+
+.header {
+  position: relative;
+  height: 100vh;
+
+  background-color: $color-dark;
+  color: $color-white;
+}
+
+.no-header {
+  display: none;
+}
+
+.hero-header-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  & img {
+    user-select: none;
+  }
+}
+
+.hero-header {
+  color: $color-black;
+  margin: 1.6rem 0rem 6.4rem 0rem;
+  user-select: none;
+}
+
+.hero-header-main {
+  display: block;
+  font-family: "Asap-Italic", sans-serif;
+  font-size: 5.2rem;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  color: $color-white;
+}
+
+.hero-header-sub {
+  font-family: "Rubik-Regular", sans-serif;
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0rem;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  color: $color-white;
+}
+
+.hero-logo {
+  display: inline-block;
+  position: relative;
+  padding: 2rem;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes logoHover {
+  0% {
+    opacity: 60%;
+  }
+
+  100% {
+    opacity: 120%;
+  }
+}
+
+.button:hover {
+  transform: translateY(-0.1rem);
+  color: $color-light;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+}
+
+.button:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+}
+
+.button {
+  font-size: 2rem;
+
+  padding: 0.8rem 2.48rem;
+  color: $color-light;
+  box-shadow: 0 1rem 2rem rgba($color-dark, 0.2);
+  background-color: $color-darkest;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  font-family: "Rubik-Regular", sans-serif;
+  text-decoration: none;
+}
+
+.button-container {
+  &.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+  }
+}
+
+.button:hover .icon-svg {
+  fill: $color-light !important;
+}
+
+.hero-button,
+hero-button:visited,
+hero-button:hover,
+hero-button:active {
+  color: inherit;
+}
+
+.hero-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: $color-white;
+}
+
+@media screen and (max-width: 540px) {
+  .hero-header-main {
+    width: 90vw;
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .hero-header-sub {
+    font-size: 1.6rem;
+  }
+
+  .background {
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .hero-header-main {
+    width: 90vw;
+  }
+}

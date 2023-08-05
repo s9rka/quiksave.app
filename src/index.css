@@ -1,6 +1,6 @@
 body, html {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Rubik', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Rubik-Regular', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;

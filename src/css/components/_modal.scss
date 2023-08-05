@@ -1,0 +1,66 @@
+@import '../abstracts/variables';
+
+
+.modal-window {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 100%;
+  height: 100%;
+    cursor: default;
+  background-color: rgba(#1a2225, 1);
+  
+}
+
+.modal-content {
+    
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: $color-white;
+  z-index: 999;
+  overflow-wrap: break-word; 
+  word-break: break-all;
+  overflow-y:auto;
+  padding: .8rem 6rem .8rem .8rem;
+  font-size: 1.4rem;
+  
+  
+}
+
+.copy-button {
+    position: absolute;
+    right: 1.6rem;
+    
+    cursor: pointer;
+    padding: .6rem;
+    border: 2px solid $color-lavender;
+    border-radius: .6rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.Toastify__toast-container--top-right {
+    margin-top: 1.6rem;
+}
+
+.Toastify__toast-container--bottom-center {
+    margin-bottom: 1.6rem;
+}

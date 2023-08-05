@@ -1,0 +1,73 @@
+@import 'pages/home';
+@import 'pages/input';
+@import 'pages/storage';
+
+@import 'components/categories';
+@import 'components/modal';
+
+@import 'abstracts/fonts';
+@import 'abstracts/variables';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  
+}
+
+body {
+  font-weight: 400;
+  font-family: "Rubik-Regular", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: $color-black;
+  background-color: $color-dark;
+}
+
+.App {
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  margin: auto;
+}
+
+@font-face {
+  font-family: "Rubik-Regular";
+  src: local("Rubik-Regular"),
+    url("../assets/fonts/Rubik-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik-Medium";
+  src: local("Rubik-Medium"),
+    url("../assets/fonts/Rubik-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik-Italic";
+  src: local("Rubik-Italic"),
+    url("../assets/fonts/Rubik-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik-Bold";
+  src: local("Rubik-Bold"),
+    url("../assets/fonts/Rubik-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Asap-Regular";
+  src: local("Asap-Regular"),
+    url("../assets/fonts/Asap-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Asap-Italic";
+  src: local("Asap-Italic"),
+    url("../assets/fonts/Asap-Italic.ttf") format("truetype");
+}

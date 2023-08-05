@@ -1,0 +1,220 @@
+@import '../abstracts/variables';
+
+.input {
+  height: fit-content;
+  
+}
+
+.my-notes {
+    width: auto;
+}
+
+.input-container {
+  padding: 2.8rem .8rem;
+  box-shadow: none;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid rgba($color-lavender, .1);
+  border-top: 2px solid rgba($color-lavender, .1);
+  border-radius: .6rem;
+  margin:.4rem;
+  user-select: none;
+
+  position: relative;
+  
+    &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../assets/small_logo.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      
+      
+  }
+
+  .decoration {
+    width: 4rem;
+    margin-bottom: .8rem;
+  }
+  
+}
+
+.input-field {
+  border: none;
+  padding: 2rem 2rem;
+  font-size: 1.6rem;
+  background-color: rgba($color-darkest, 1);
+  border-radius: 0.8rem;
+  font-family: "Rubik-Regular", sans-serif;
+  width: 100%;
+  height: 18vh;
+  
+  color: $color-white;
+  resize: none;
+  border: 1px solid rgba($color-light, 0.12);
+  position: relative;
+
+  &:focus {
+    outline: none !important;
+    border: 1px solid rgba($color-light, 0.21);
+  }
+
+  &::placeholder {
+    
+      font-size: 1.4rem;
+      color: $color-white;
+      font-family: "Rubik-Italic", sans-serif;
+      vertical-align: middle;
+      
+    
+  }
+
+  &.small {
+    height: 6vh;
+    border-radius: 0.2rem;
+
+    margin-top: 0.4rem;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    text-decoration: none;
+    margin-top: 2.8rem;
+    position: relative;
+
+    &.notes {
+        margin: 1.2rem;
+        margin-top: 2.8rem;
+    }
+  
+}
+
+
+.submit-button {
+  background-color: $color-light;
+  font-weight: 600;
+  font-size: 1.6rem;
+  padding: .8rem 1.6rem;
+    font-weight: 500;
+    box-shadow: 0 1rem 2rem rgba($color-dark, .12);
+    border-radius: .8rem;
+    cursor: pointer;
+     animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;   
+    font-family: 'Rubik-Medium', sans-serif;
+    width: 100%;
+    height: 5.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+  &:hover {
+    background-position: right center; /* change the direction of the change here */
+    text-decoration: none;
+    box-shadow: 0 0.25rem 1rem rgba($color-black, 0.1);
+    background-color: rgba($color-light, .8);
+    transform: translateY(-0.1rem);
+  }
+  
+  
+  &.my-notes {
+    color: $color-light;
+    background-color: rgba($color-black, .2);
+    border: 2px solid rgba($color-lavender, .5);
+    width: 80%;
+    height: 4.8rem;
+    text-decoration: none;
+    
+    &:hover {
+        background-position: right center; /* change the direction of the change here */
+    box-shadow: 0 0.25rem 1rem rgba($color-black, 0.1);
+    background-color: rgba($color-dark, .1);
+    transform: translateY(-0.1rem);
+    }
+    
+  }
+
+  // background: linear-gradient(to right, #FFE7CC, #F7D8CC, #F7D8CC, #F6DBCA);
+  
+  &::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+}
+
+.logo-on-button {
+  width: 2.8rem;
+  height: 2.8rem;
+  opacity: 0.85;
+}
+
+.Toastify__toast--info {
+  background: #181715 !important;
+}
+
+@media screen and (min-width: 700px) {
+  .input-container {
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    box-shadow: 2px 2px 16px rgba($color-lavender, 0.1);
+    border: 2px solid rgba($color-lavender, .1);
+    border-radius: 1.6rem;
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 8rem;
+  }
+
+
+  .submit-button {
+    font-size: 2.2rem;
+    font-weight: 500;
+    gap: 1.2rem;
+    padding: 0rem 2.4rem;
+    width: auto;
+
+    &.my-notes {
+        width: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .input-container {
+    width: 50%;
+  }
+  .input-container-active {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .input-container {
+    width: 30%;
+  }
+
+  .input-container-active {
+    width: 30%;
+  }
+}
