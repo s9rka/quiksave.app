@@ -32,7 +32,7 @@ const SourceModal = (props) => {
 
         
   return (
-    <div className="modal-container">
+    <div className="source-modal-container">
       <div className="modal">
         {!modalOpen && (
           <div onClick={openModal} className="post-source">

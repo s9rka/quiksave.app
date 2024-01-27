@@ -6,7 +6,7 @@
 }
 
 .my-notes {
-    width: auto;
+    
 }
 
 .input-container {
@@ -126,26 +126,6 @@
     transform: translateY(-0.1rem);
   }
   
-  
-  &.my-notes {
-    color: $color-light;
-    background-color: rgba($color-black, .2);
-    border: 2px solid rgba($color-lavender, .5);
-    width: 80%;
-    height: 4.8rem;
-    text-decoration: none;
-    
-    &:hover {
-        background-position: right center; /* change the direction of the change here */
-    box-shadow: 0 0.25rem 1rem rgba($color-black, 0.1);
-    background-color: rgba($color-dark, .1);
-    transform: translateY(-0.1rem);
-    }
-    
-  }
-
-  // background: linear-gradient(to right, #FFE7CC, #F7D8CC, #F7D8CC, #F6DBCA);
-  
   &::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
@@ -167,15 +147,31 @@
   background: #181715 !important;
 }
 
+.add-new.my-notes {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  color: rgba($color-lavender, 1);
+  margin: 2.8rem;
+  text-decoration: none;
+
+  & img {
+    height: 4.8rem;
+  }
+  
+}
+
 @media screen and (min-width: 700px) {
   .input-container {
-    width: 70vw;
+    width: 50rem;
     display: flex;
     justify-content: center;
     background-color: transparent;
     box-shadow: 2px 2px 16px rgba($color-lavender, 0.1);
     border: 2px solid rgba($color-lavender, .1);
     border-radius: 1.6rem;
+    padding: 1.2rem;
   }
 
   .input {
@@ -187,31 +183,28 @@
   }
 
 
-  .submit-button {
-    font-size: 2.2rem;
-    font-weight: 500;
-    gap: 1.2rem;
-    padding: 0rem 2.4rem;
-    width: auto;
-
-    &.my-notes {
-        width: auto;
-    }
-  }
+  
 }
 
 @media screen and (min-width: 880px) {
   .input-container {
-    width: 50%;
+    max-width: 60rem;
   }
-  .input-container-active {
-    width: 50%;
+
+  .add-new.my-notes {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    color: rgba($color-lavender, 1);
+    
+    text-decoration: none;
   }
 }
 
 @media screen and (min-width: 1300px) {
   .input-container {
-    width: 30%;
+    width: 40%;
   }
 
   .input-container-active {

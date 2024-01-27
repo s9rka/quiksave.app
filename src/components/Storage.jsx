@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import trashicon from "../assets/trashicon.svg";
 import trashiconred from "../assets/trashiconred.svg";
-import bigadd from "../assets/big-add.svg";
+import bigadd from "../assets/big-add2.svg";
 import SourceModal from "./SourceModal";
 import { Link } from "react-router-dom";
 import DeleteModal from "./DeleteModal";
@@ -129,11 +129,15 @@ function Storage() {
                       <div className="post-category">{element.category[2]}</div>
                     )}
                     {element.source && <SourceModal source={element.source} />}
+
                   </div>
+                  
                   {!showDelete && <div className="date">{element.date}</div>}
+                  {showDelete && <DeleteModal note={element.note} startTime={element}/>}
                 </div>
-                {showDelete && <DeleteModal note={element.note} startTime={element}/>}
+                
                 <div className="note">{element.note}</div>
+                
               </div>
             );
           })}

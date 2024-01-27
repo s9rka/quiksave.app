@@ -3,6 +3,7 @@ import trashicon from "../assets/trashicon.svg";
 import trashiconred from "../assets/trashiconred.svg";
 import addicon from "../assets/addicon.svg";
 import logo from '../assets/logo.svg';
+import bigfolder from '../assets/big-folder.svg';
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -255,8 +256,9 @@ export default function Input() {
           />
         </div>
       </div>
-      <div className="button-container notes">
-        <Link to="/storage" className="submit-button my-notes">
+      <div className="manage notes">
+        <Link to="/storage" className="add-new my-notes">
+          <img src={bigfolder}></img>
           My notes
         </Link>
       </div>

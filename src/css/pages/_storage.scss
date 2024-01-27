@@ -164,26 +164,26 @@
 .manage {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 0.5rem;
-
+  backdrop-filter: blur(2px);
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1000; 
+}
+
+.manage.notes {
+  backdrop-filter: blur(0px);
+  
 }
 
 .add-new {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: sticky;
-  margin: 1.2rem;
-  padding: 2.4rem;
-  border-radius: 50%;
-  border: 6px solid rgba($color-lavender, 1);
-  background-color: #bdc5ff;
+  & img {
+    height: 10rem;
+    margin:1rem;
+  }
 }
 
 .manage-tags.storage-version {
@@ -232,6 +232,7 @@
 
   .manage {
     justify-content: center;
+    
   }
 }
 
@@ -257,6 +258,8 @@
 
   .manage {
     justify-content: flex-end;
-    margin: 4rem;
+    margin: 2.4rem;
+    backdrop-filter: none;
+    
   }
 }

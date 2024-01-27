@@ -34,8 +34,17 @@
   overflow-y:auto;
   padding: .8rem 6rem .8rem .8rem;
   font-size: 1.4rem;
-  
-  
+}
+
+.modal-container {
+  position: absolute;
+  top: .3rem;
+  right: .3rem;
+
+}
+
+.post-delete {
+  cursor: pointer;
 }
 
 .copy-button {
