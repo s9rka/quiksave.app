@@ -1,6 +1,7 @@
+![image](https://raw.githubusercontent.com/s9rka/quiksave.app/3ce2d386d5ef82257f487cf4c0f86f76027262d6/src/assets/logo.svg)
 # Quiksave notepad
 Quickly take notes. Sort with tags.
-![image](https://raw.githubusercontent.com/s9rka/quiksave.app/3ce2d386d5ef82257f487cf4c0f86f76027262d6/src/assets/logo.svg)
+
 
 ## About
 - My first hobby project, started in 2021
